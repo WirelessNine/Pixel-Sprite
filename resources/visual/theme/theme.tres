@@ -1,20 +1,54 @@
 [gd_resource type="Theme" format=3 uid="uid://csit11glgk4nh"]
 
 [ext_resource type="StyleBox" uid="uid://dmkq0ralyjapl" path="res://resources/visual/theme/styleboxes/button/color_normal.tres" id="1_7p8p5"]
+[ext_resource type="StyleBox" uid="uid://dlyv26unl1454" path="res://resources/visual/theme/styleboxes/button/empty.tres" id="1_t74le"]
+[ext_resource type="StyleBox" uid="uid://bljnkldxfbj40" path="res://resources/visual/theme/styleboxes/button/hover.tres" id="1_ualjv"]
 [ext_resource type="StyleBox" uid="uid://bypo2e7k2i0uc" path="res://resources/visual/theme/styleboxes/panel/background.tres" id="2_7bn12"]
+[ext_resource type="StyleBox" uid="uid://b5lqiagpp7foy" path="res://resources/visual/theme/styleboxes/button/normal.tres" id="2_7p8p5"]
 [ext_resource type="StyleBox" uid="uid://dbyir067cruxq" path="res://resources/visual/theme/styleboxes/button/color_pressed.tres" id="2_t74le"]
 [ext_resource type="StyleBox" uid="uid://cf7ptgipoiidm" path="res://resources/visual/theme/styleboxes/panel/foreground.tres" id="3_7bn12"]
+[ext_resource type="StyleBox" uid="uid://dwckkqd8xqeb3" path="res://resources/visual/theme/styleboxes/button/flat_pressed.tres" id="3_8pfkj"]
+[ext_resource type="StyleBox" uid="uid://cdmytwboi2108" path="res://resources/visual/theme/styleboxes/button/pressed.tres" id="3_t74le"]
 [ext_resource type="StyleBox" uid="uid://bmp606rbvbbn7" path="res://resources/visual/theme/styleboxes/panel/inset.tres" id="4_2fqcs"]
 [ext_resource type="StyleBox" uid="uid://c0qfl5y5auslq" path="res://resources/visual/theme/styleboxes/panel/section.tres" id="5_fsea4"]
 [ext_resource type="FontFile" uid="uid://cgd8wm7x40h8l" path="res://assets/fonts/monogram-extended.ttf" id="5_qvm3q"]
+[ext_resource type="Texture2D" uid="uid://8slcja17vfj3" path="res://resources/visual/theme/atlases/right.tres" id="6_qfmn5"]
+[ext_resource type="StyleBox" uid="uid://boga0ullpqw5p" path="res://resources/visual/theme/styleboxes/separator/popup_separator.tres" id="6_wr31a"]
+[ext_resource type="StyleBox" uid="uid://dasa6peb8mllx" path="res://resources/visual/theme/styleboxes/panel/popup.tres" id="7_2cytp"]
+[ext_resource type="StyleBox" uid="uid://rmdpejrxe3uy" path="res://resources/visual/theme/styleboxes/button/tab_normal.tres" id="8_fbrr7"]
+[ext_resource type="Texture2D" uid="uid://ddf8v30ma8mjb" path="res://resources/visual/theme/atlases/close.tres" id="8_wr31a"]
+[ext_resource type="StyleBox" uid="uid://dnfw5hce3pxb4" path="res://resources/visual/theme/styleboxes/button/tab_pressed.tres" id="9_wr31a"]
 
 [resource]
 default_font = ExtResource("5_qvm3q")
+Button/styles/hover = ExtResource("1_ualjv")
+Button/styles/normal = ExtResource("2_7p8p5")
+Button/styles/pressed = ExtResource("3_t74le")
+MenuBar/colors/font_hover_color = Color(0.73300475, 0.73300564, 0.733005, 1)
+MenuBar/constants/h_separation = 0
+MenuBar/styles/hover = ExtResource("1_t74le")
+MenuBar/styles/normal = ExtResource("1_t74le")
+MenuBar/styles/pressed = ExtResource("3_8pfkj")
+PopupMenu/icons/submenu = ExtResource("6_qfmn5")
+PopupMenu/styles/hover = ExtResource("3_8pfkj")
+PopupMenu/styles/labeled_separator_left = ExtResource("6_wr31a")
+PopupMenu/styles/labeled_separator_right = ExtResource("6_wr31a")
+PopupMenu/styles/panel = ExtResource("7_2cytp")
+PopupMenu/styles/separator = ExtResource("6_wr31a")
+TabBar/constants/tab_separation = 1
+TabBar/icons/close = ExtResource("8_wr31a")
+TabBar/styles/button_highlight = ExtResource("1_t74le")
+TabBar/styles/button_pressed = ExtResource("1_t74le")
+TabBar/styles/tab_hovered = ExtResource("8_fbrr7")
+TabBar/styles/tab_selected = ExtResource("9_wr31a")
+TabBar/styles/tab_unselected = ExtResource("8_fbrr7")
 button_color/base_type = &"Button"
 button_color/styles/hover = ExtResource("1_7p8p5")
 button_color/styles/hover_pressed = ExtResource("2_t74le")
 button_color/styles/normal = ExtResource("1_7p8p5")
 button_color/styles/pressed = ExtResource("2_t74le")
+h_box_small/base_type = &"HBoxContainer"
+h_box_small/constants/separation = 2
 panel_background/base_type = &"PanelContainer"
 panel_background/styles/panel = ExtResource("2_7bn12")
 panel_foreground/base_type = &"PanelContainer"
@@ -23,3 +57,5 @@ panel_inset/base_type = &"PanelContainer"
 panel_inset/styles/panel = ExtResource("4_2fqcs")
 panel_section/base_type = &"PanelContainer"
 panel_section/styles/panel = ExtResource("5_fsea4")
+v_box_small/base_type = &"VBoxContainer"
+v_box_small/constants/separation = 2

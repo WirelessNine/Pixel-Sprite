@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Pixel Sprite"
-run/main_scene="uid://dj337nc3yuphj"
+run/main_scene="uid://cv73j3jhbhaef"
 config/features=PackedStringArray("4.7", "Forward Plus")
 run/low_processor_mode=true
 config/icon="res://icon.svg"
@@ -20,13 +20,17 @@ config/icon="res://icon.svg"
 
 MenuManager="*uid://yt4k544va37f"
 
+[debug]
+
+gdscript/warnings/unused_signal=0
+gdscript/warnings/untyped_declaration=2
+
 [display]
 
 window/size/viewport_width=960
 window/size/viewport_height=540
 window/size/mode=2
 window/stretch/aspect="expand"
-window/stretch/scale=2.0
 
 [editor_plugins]
 
