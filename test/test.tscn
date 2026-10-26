@@ -1,0 +1,128 @@
+[gd_scene format=3 uid="uid://dj337nc3yuphj"]
+
+[node name="Test" type="PanelContainer" unique_id=403298982]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"panel_background"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1570236586]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=2049334520]
+layout_mode = 2
+
+[node name="Menu" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1609691496]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Tools" type="PanelContainer" parent="VBoxContainer/HBoxContainer" unique_id=1552597085]
+visible = false
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/Tools" unique_id=2122754051]
+layout_mode = 2
+
+[node name="Draw" type="Button" parent="VBoxContainer/HBoxContainer/Tools/HBoxContainer" unique_id=52334999]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+
+[node name="Erase" type="Button" parent="VBoxContainer/HBoxContainer/Tools/HBoxContainer" unique_id=1769405229]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+
+[node name="Fill" type="Button" parent="VBoxContainer/HBoxContainer/Tools/HBoxContainer" unique_id=1864581455]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+
+[node name="Eyedropper" type="Button" parent="VBoxContainer/HBoxContainer/Tools/HBoxContainer" unique_id=476263111]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+
+[node name="Shape" type="Button" parent="VBoxContainer/HBoxContainer/Tools/HBoxContainer" unique_id=821806883]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+
+[node name="Marquee" type="Button" parent="VBoxContainer/HBoxContainer/Tools/HBoxContainer" unique_id=286850445]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer" unique_id=369264130]
+layout_mode = 2
+size_flags_vertical = 3
+theme_type_variation = &"panel_foreground"
+
+[node name="HSplitContainer" type="HSplitContainer" parent="VBoxContainer/PanelContainer" unique_id=1855803415]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 6
+split_offsets = PackedInt32Array(100)
+split_offset = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PanelContainer/HSplitContainer" unique_id=1516986262]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="Colors" type="PanelContainer" parent="VBoxContainer/PanelContainer/HSplitContainer/VBoxContainer" unique_id=1945624560]
+layout_mode = 2
+size_flags_vertical = 3
+theme_type_variation = &"panel_inset"
+
+[node name="HFlowContainer" type="HFlowContainer" parent="VBoxContainer/PanelContainer/HSplitContainer/VBoxContainer/Colors" unique_id=794293055]
+layout_mode = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+
+[node name="Button" type="Button" parent="VBoxContainer/PanelContainer/HSplitContainer/VBoxContainer/Colors/HFlowContainer" unique_id=618552327]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+theme_type_variation = &"button_color"
+toggle_mode = true
+
+[node name="Button2" type="Button" parent="VBoxContainer/PanelContainer/HSplitContainer/VBoxContainer/Colors/HFlowContainer" unique_id=240155869]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+theme_type_variation = &"button_color"
+toggle_mode = true
+
+[node name="Button3" type="Button" parent="VBoxContainer/PanelContainer/HSplitContainer/VBoxContainer/Colors/HFlowContainer" unique_id=2022819131]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+theme_type_variation = &"button_color"
+toggle_mode = true
+
+[node name="Button4" type="Button" parent="VBoxContainer/PanelContainer/HSplitContainer/VBoxContainer/Colors/HFlowContainer" unique_id=1564546612]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+theme_type_variation = &"button_color"
+toggle_mode = true
+
+[node name="Button5" type="Button" parent="VBoxContainer/PanelContainer/HSplitContainer/VBoxContainer/Colors/HFlowContainer" unique_id=1918129440]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+theme_type_variation = &"button_color"
+toggle_mode = true
+
+[node name="Button6" type="Button" parent="VBoxContainer/PanelContainer/HSplitContainer/VBoxContainer/Colors/HFlowContainer" unique_id=512053251]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+theme_type_variation = &"button_color"
+toggle_mode = true
+
+[node name="Button7" type="Button" parent="VBoxContainer/PanelContainer/HSplitContainer/VBoxContainer/Colors/HFlowContainer" unique_id=283368008]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+theme_type_variation = &"button_color"
+toggle_mode = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/PanelContainer/HSplitContainer" unique_id=1208026818]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Canvas" type="PanelContainer" parent="VBoxContainer/PanelContainer/HSplitContainer/VBoxContainer2" unique_id=1007237875]
+layout_mode = 2
+size_flags_vertical = 3
+theme_type_variation = &"panel_section"

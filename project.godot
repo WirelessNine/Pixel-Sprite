@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Pixel Sprite"
-run/main_scene="uid://cv73j3jhbhaef"
+run/main_scene="uid://dj337nc3yuphj"
 config/features=PackedStringArray("4.7", "Forward Plus")
 run/low_processor_mode=true
 config/icon="res://icon.svg"
@@ -25,6 +25,8 @@ MenuManager="*uid://yt4k544va37f"
 window/size/viewport_width=960
 window/size/viewport_height=540
 window/size/mode=2
+window/stretch/aspect="expand"
+window/stretch/scale=2.0
 
 [editor_plugins]
 
@@ -38,8 +40,20 @@ folder_colors={
 "res://classes/": "yellow",
 "res://core/": "green",
 "res://resources/": "teal",
-"res://scenes/": "blue"
+"res://scenes/": "blue",
+"res://test/": "gray"
 }
+
+[gui]
+
+theme/custom="uid://csit11glgk4nh"
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+pointing/main_scene="uid://dj337nc3yuphj"
+pointing/stretch/scale=2.0
+pointing/stretch/mode="disabled"
 
 [physics]
 
@@ -47,6 +61,8 @@ folder_colors={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true

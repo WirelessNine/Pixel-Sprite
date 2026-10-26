@@ -1,0 +1,25 @@
+[gd_resource type="Theme" format=3 uid="uid://csit11glgk4nh"]
+
+[ext_resource type="StyleBox" uid="uid://dmkq0ralyjapl" path="res://resources/visual/theme/styleboxes/button/color_normal.tres" id="1_7p8p5"]
+[ext_resource type="StyleBox" uid="uid://bypo2e7k2i0uc" path="res://resources/visual/theme/styleboxes/panel/background.tres" id="2_7bn12"]
+[ext_resource type="StyleBox" uid="uid://dbyir067cruxq" path="res://resources/visual/theme/styleboxes/button/color_pressed.tres" id="2_t74le"]
+[ext_resource type="StyleBox" uid="uid://cf7ptgipoiidm" path="res://resources/visual/theme/styleboxes/panel/foreground.tres" id="3_7bn12"]
+[ext_resource type="StyleBox" uid="uid://bmp606rbvbbn7" path="res://resources/visual/theme/styleboxes/panel/inset.tres" id="4_2fqcs"]
+[ext_resource type="StyleBox" uid="uid://c0qfl5y5auslq" path="res://resources/visual/theme/styleboxes/panel/section.tres" id="5_fsea4"]
+[ext_resource type="FontFile" uid="uid://cgd8wm7x40h8l" path="res://assets/fonts/monogram-extended.ttf" id="5_qvm3q"]
+
+[resource]
+default_font = ExtResource("5_qvm3q")
+button_color/base_type = &"Button"
+button_color/styles/hover = ExtResource("1_7p8p5")
+button_color/styles/hover_pressed = ExtResource("2_t74le")
+button_color/styles/normal = ExtResource("1_7p8p5")
+button_color/styles/pressed = ExtResource("2_t74le")
+panel_background/base_type = &"PanelContainer"
+panel_background/styles/panel = ExtResource("2_7bn12")
+panel_foreground/base_type = &"PanelContainer"
+panel_foreground/styles/panel = ExtResource("3_7bn12")
+panel_inset/base_type = &"PanelContainer"
+panel_inset/styles/panel = ExtResource("4_2fqcs")
+panel_section/base_type = &"PanelContainer"
+panel_section/styles/panel = ExtResource("5_fsea4")

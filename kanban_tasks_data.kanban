@@ -10,7 +10,28 @@
 		{
 			"uuid": "84cd57f6-12c5-480c-a0f1-1cb678652023",
 			"title": "Todo",
-			"tasks": []
+			"tasks": [
+				"b709dd41-b7b3-435a-a8e7-09d402d2e355",
+				"432a12bf-46d1-4448-88a5-4d552b963df6",
+				"60588409-bfe4-4102-9e4e-5d2fface442e",
+				"48990f66-3019-46a6-bac2-6eb91df6d0b4",
+				"cec0255e-3735-4a07-9a86-547084b1102d",
+				"a683bdd3-61d0-4843-80a4-61fc589e549d",
+				"20e4a1e8-e7f9-4387-a5ac-8885c94bafab",
+				"57f4bf09-7393-47a5-b1cd-0bba7e5085c4",
+				"fa3dae59-2135-48d8-b6ec-1666050a7a17",
+				"2a9fc0cc-4f42-4383-a338-71cfd57881e3",
+				"97e0342c-8e94-445a-9579-8401d0e6d413",
+				"b85560bd-518f-4a1c-836c-516d4c3ae090",
+				"9628b620-a810-4595-a33c-0c62114a73c2",
+				"a436ca15-6f7e-488d-aa63-30e08d301515",
+				"ed72594b-ac7c-4201-8b80-cf3d284923c5",
+				"d9ee8289-1412-4e4d-b1dd-2ae23e281d84",
+				"e4569c0a-f52b-4b71-827e-45f005f2bd17",
+				"6d74fe26-2f62-4fcd-aacd-19c847c4b642",
+				"151a46e4-00ef-4de2-b49b-c01f86d73800",
+				"a5ac7441-b2e0-4430-ac02-a1640cdc1db8"
+			]
 		},
 		{
 			"uuid": "6a328d40-a73b-4e3a-abe8-337d304881c0",
@@ -20,10 +41,160 @@
 		{
 			"uuid": "5aa41546-6933-4bc8-9e92-6dc0b3a92598",
 			"title": "Done",
-			"tasks": []
+			"tasks": [
+				"a9918989-8c23-4e3c-a650-1bf14da7934b"
+			]
 		}
 	],
-	"tasks": [],
+	"tasks": [
+		{
+			"uuid": "b709dd41-b7b3-435a-a8e7-09d402d2e355",
+			"title": "Add home screen",
+			"description": "",
+			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
+			"steps": []
+		},
+		{
+			"uuid": "432a12bf-46d1-4448-88a5-4d552b963df6",
+			"title": "Add image file opening",
+			"description": "",
+			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
+			"steps": []
+		},
+		{
+			"uuid": "60588409-bfe4-4102-9e4e-5d2fface442e",
+			"title": "Add drawing screen",
+			"description": "",
+			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
+			"steps": []
+		},
+		{
+			"uuid": "48990f66-3019-46a6-bac2-6eb91df6d0b4",
+			"title": "Add file and edit menu bars",
+			"description": "",
+			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
+			"steps": []
+		},
+		{
+			"uuid": "cec0255e-3735-4a07-9a86-547084b1102d",
+			"title": "Add recent files list",
+			"description": "",
+			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
+			"steps": []
+		},
+		{
+			"uuid": "a683bdd3-61d0-4843-80a4-61fc589e549d",
+			"title": "Add image file saving and loading",
+			"description": "",
+			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
+			"steps": []
+		},
+		{
+			"uuid": "20e4a1e8-e7f9-4387-a5ac-8885c94bafab",
+			"title": "Add animation timeline",
+			"description": "",
+			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
+			"steps": []
+		},
+		{
+			"uuid": "57f4bf09-7393-47a5-b1cd-0bba7e5085c4",
+			"title": "Add canvas component",
+			"description": "",
+			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
+			"steps": []
+		},
+		{
+			"uuid": "fa3dae59-2135-48d8-b6ec-1666050a7a17",
+			"title": "Add simple drawing and erasing",
+			"description": "",
+			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
+			"steps": []
+		},
+		{
+			"uuid": "2a9fc0cc-4f42-4383-a338-71cfd57881e3",
+			"title": "Add variable brush sizes",
+			"description": "",
+			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
+			"steps": []
+		},
+		{
+			"uuid": "97e0342c-8e94-445a-9579-8401d0e6d413",
+			"title": "Add circle brushes",
+			"description": "",
+			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
+			"steps": []
+		},
+		{
+			"uuid": "b85560bd-518f-4a1c-836c-516d4c3ae090",
+			"title": "Add color pallete and color picker",
+			"description": "",
+			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
+			"steps": []
+		},
+		{
+			"uuid": "9628b620-a810-4595-a33c-0c62114a73c2",
+			"title": "Add layers",
+			"description": "",
+			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
+			"steps": []
+		},
+		{
+			"uuid": "a436ca15-6f7e-488d-aa63-30e08d301515",
+			"title": "Add drawing preview",
+			"description": "",
+			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
+			"steps": []
+		},
+		{
+			"uuid": "ed72594b-ac7c-4201-8b80-cf3d284923c5",
+			"title": "Add marquee tool",
+			"description": "",
+			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
+			"steps": []
+		},
+		{
+			"uuid": "d9ee8289-1412-4e4d-b1dd-2ae23e281d84",
+			"title": "Add eyedropper tool",
+			"description": "",
+			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
+			"steps": []
+		},
+		{
+			"uuid": "e4569c0a-f52b-4b71-827e-45f005f2bd17",
+			"title": "Add fill tool",
+			"description": "",
+			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
+			"steps": []
+		},
+		{
+			"uuid": "6d74fe26-2f62-4fcd-aacd-19c847c4b642",
+			"title": "Add line tool",
+			"description": "",
+			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
+			"steps": []
+		},
+		{
+			"uuid": "151a46e4-00ef-4de2-b49b-c01f86d73800",
+			"title": "Add shape tool",
+			"description": "",
+			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
+			"steps": []
+		},
+		{
+			"uuid": "a5ac7441-b2e0-4430-ac02-a1640cdc1db8",
+			"title": "Add support .ase files",
+			"description": "",
+			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
+			"steps": []
+		},
+		{
+			"uuid": "a9918989-8c23-4e3c-a650-1bf14da7934b",
+			"title": "Add UI theme",
+			"description": "",
+			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
+			"steps": []
+		}
+	],
 	"layout": {
 		"columns": [
 			[
