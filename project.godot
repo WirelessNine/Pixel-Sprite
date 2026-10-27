@@ -19,6 +19,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 MenuManager="*uid://yt4k544va37f"
+AppManager="*uid://n24kdl5sc4k5"
+Events="*uid://6q5tu71jlnjt"
 
 [debug]
 

@@ -1,6 +1,7 @@
 extends Control
 
 const HOME_TITLE: String = "Home"
+const UNNAMED_TITLE: String = "Unnamed %01d"
 
 @onready var menu_bar: MenuBar = %MenuBar
 
@@ -13,15 +14,24 @@ const HOME_TITLE: String = "Home"
 @onready var tabs: TabBar = %Tabs
 
 @onready var home_screen: VBoxContainer = %HomeScreen
-@onready var drawing_editor: HSplitContainer = %DrawingEditor
+@onready var draw_editor: HSplitContainer = %DrawEditor
+
+var current_file_number: int = 0
 
 
 func _ready() -> void:
+	_connect_signals()
+
 	_handle_scale()
 
 	_create_home_tab()
-	_create_file_menu_items()
 	_create_edit_menu_items()
+
+
+func _connect_signals() -> void:
+	tabs.tab_changed.connect(_on_tab_changed)
+
+	Events.file_created.connect(_on_file_created)
 
 
 func _handle_scale() -> void:
@@ -35,7 +45,12 @@ func _handle_scale() -> void:
 
 func _show_home_screen() -> void:
 	home_screen.show()
-	drawing_editor.hide()
+	draw_editor.hide()
+
+
+func _show_draw_editor() -> void:
+	draw_editor.show()
+	home_screen.hide()
 
 
 func _create_home_tab() -> void:
@@ -47,17 +62,6 @@ func _create_home_tab() -> void:
 	var tab_id: int = tabs.tab_count - 1
 
 	tabs.move_tab(tab_id, 0)
-
-
-func _create_file_menu_items() -> void:
-	file_menu.add_item("New")
-	file_menu.add_item("Open")
-
-	file_menu.add_separator()
-
-	file_menu.add_item("Save")
-	file_menu.add_item("Save As")
-	file_menu.add_item("Close")
 
 
 func _create_edit_menu_items() -> void:
@@ -95,3 +99,14 @@ func _on_tab_changed(tab: int) -> void:
 
 	if title == HOME_TITLE:
 		_show_home_screen()
+	else:
+		_show_draw_editor()
+
+
+func _on_file_created(file: FileInstance) -> void:
+	tabs.add_tab(file.title)
+
+	var id: int = tabs.tab_count - 1
+
+	tabs.set_tab_metadata(id, file)
+	tabs.current_tab = id

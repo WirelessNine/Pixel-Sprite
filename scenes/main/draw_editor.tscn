@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://dgnppp1b1s1g8" path="res://resources/visual/icons/shape.tres" id="6_oefrb"]
 [ext_resource type="Texture2D" uid="uid://cku7mrs5qp0hc" path="res://resources/visual/icons/select.tres" id="7_agl5e"]
 
-[node name="DrawingEditor" type="HSplitContainer" unique_id=76540871]
+[node name="DrawEditor" type="HSplitContainer" unique_id=76540871]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

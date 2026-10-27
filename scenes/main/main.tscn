@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://cv73j3jhbhaef"]
 
 [ext_resource type="Script" uid="uid://dic3hu35lw2cf" path="res://scenes/main/main.gd" id="1_hyk8p"]
-[ext_resource type="PackedScene" uid="uid://ck0868ug76xeu" path="res://scenes/main/drawing_editor.tscn" id="2_iuonh"]
+[ext_resource type="PackedScene" uid="uid://ck0868ug76xeu" path="res://scenes/main/draw_editor.tscn" id="2_iuonh"]
 [ext_resource type="PackedScene" uid="uid://c0nndytlfkolw" path="res://scenes/main/home_screen.tscn" id="2_k2fmo"]
+[ext_resource type="Script" uid="uid://ck3qlisigikex" path="res://scenes/main/menu_bar/file_menu.gd" id="2_l3cfh"]
+[ext_resource type="PackedScene" uid="uid://xqb3lngeuu63" path="res://scenes/windows/create_file.tscn" id="5_6q06x"]
 
 [node name="Main" type="PanelContainer" unique_id=122593638]
 anchors_preset = 15
@@ -35,6 +37,7 @@ layout_mode = 2
 unique_name_in_owner = true
 canvas_item_default_texture_filter = 0
 oversampling_override = 1.0
+script = ExtResource("2_l3cfh")
 
 [node name="Edit" type="PopupMenu" parent="MainVBox/MenuMargin/MenuHBox/MenuBar" unique_id=958992046]
 unique_name_in_owner = true
@@ -78,6 +81,12 @@ unique_name_in_owner = true
 visible = false
 layout_mode = 2
 
-[node name="DrawingEditor" parent="MainVBox/ScreensPanel" unique_id=1333880969 instance=ExtResource("2_iuonh")]
+[node name="DrawEditor" parent="MainVBox/ScreensPanel" unique_id=1333880969 instance=ExtResource("2_iuonh")]
 unique_name_in_owner = true
 layout_mode = 2
+
+[node name="CreateFile" parent="." unique_id=1823662104 instance=ExtResource("5_6q06x")]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4

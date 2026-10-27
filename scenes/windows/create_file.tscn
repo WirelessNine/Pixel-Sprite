@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://xqb3lngeuu63"]
+
+[ext_resource type="Script" uid="uid://yglggarv2cq4" path="res://scenes/windows/create_file.gd" id="1_vaek0"]
+[ext_resource type="Resource" uid="uid://bn5yymmr2r6ut" path="res://resources/engine/presets/menu.tres" id="2_kxn3d"]
+
+[node name="CreateFile" type="PanelContainer" unique_id=677680888]
+custom_minimum_size = Vector2(185, 130)
+offset_right = 185.0
+offset_bottom = 130.0
+theme_type_variation = &"panel_window"
+script = ExtResource("1_vaek0")
+preset = ExtResource("2_kxn3d")
+move_background = true
+start_closed = true
+metadata/_custom_type_script = "uid://rxwty6cd03ab"
+
+[node name="CreateVBox" type="VBoxContainer" parent="." unique_id=1705004732]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CreateVBox" unique_id=757375944]
+layout_mode = 2
+text = "Create File"
+
+[node name="SizeGrid" type="GridContainer" parent="CreateVBox" unique_id=1038838708]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 2
+
+[node name="Label" type="Label" parent="CreateVBox/SizeGrid" unique_id=1810704643]
+layout_mode = 2
+text = "X"
+
+[node name="Width" type="SpinBox" parent="CreateVBox/SizeGrid" unique_id=2129606999]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 1.0
+max_value = 4096.0
+value = 16.0
+
+[node name="Label2" type="Label" parent="CreateVBox/SizeGrid" unique_id=2125902895]
+layout_mode = 2
+text = "Y"
+
+[node name="Height" type="SpinBox" parent="CreateVBox/SizeGrid" unique_id=1533721316]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 1.0
+max_value = 4096.0
+value = 16.0
+
+[node name="ActionHBox" type="HBoxContainer" parent="CreateVBox" unique_id=137701413]
+layout_mode = 2
+theme_type_variation = &"h_box_small"
+
+[node name="Create" type="Button" parent="CreateVBox/ActionHBox" unique_id=2088916348]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Create"
+
+[node name="Cancel" type="Button" parent="CreateVBox/ActionHBox" unique_id=552792244]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Cancel"
+
+[connection signal="pressed" from="CreateVBox/ActionHBox/Create" to="." method="_on_create_pressed"]
+[connection signal="pressed" from="CreateVBox/ActionHBox/Cancel" to="." method="_on_cancel_pressed"]

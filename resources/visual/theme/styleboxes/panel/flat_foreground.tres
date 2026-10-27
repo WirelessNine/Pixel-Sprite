@@ -1,0 +1,7 @@
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://dajieixraxpp2"]
+
+[ext_resource type="Texture2D" uid="uid://dw0302lcwkc0q" path="res://assets/spritesheets/theme.png" id="1_mtyap"]
+
+[resource]
+texture = ExtResource("1_mtyap")
+region_rect = Rect2(16, 16, 16, 16)
