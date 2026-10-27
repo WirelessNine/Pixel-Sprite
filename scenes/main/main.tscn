@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cv73j3jhbhaef"]
 
 [ext_resource type="Script" uid="uid://dic3hu35lw2cf" path="res://scenes/main/main.gd" id="1_hyk8p"]
+[ext_resource type="PackedScene" uid="uid://ck0868ug76xeu" path="res://scenes/main/drawing_editor.tscn" id="2_iuonh"]
 
 [node name="Main" type="PanelContainer" unique_id=122593638]
 anchors_preset = 15
@@ -69,3 +70,6 @@ drag_to_rearrange_enabled = true
 layout_mode = 2
 size_flags_vertical = 3
 theme_type_variation = &"panel_foreground"
+
+[node name="DrawingEditor" parent="MainVBox/ScreensPanel" unique_id=1333880969 instance=ExtResource("2_iuonh")]
+layout_mode = 2
