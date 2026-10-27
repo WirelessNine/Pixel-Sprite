@@ -41,6 +41,7 @@
 			"uuid": "5aa41546-6933-4bc8-9e92-6dc0b3a92598",
 			"title": "Done",
 			"tasks": [
+				"3d728b7d-2d51-4a30-aa0a-fa4a0a30e121",
 				"60588409-bfe4-4102-9e4e-5d2fface442e",
 				"106b9cd7-5431-433b-a043-daf15326de29",
 				"a9918989-8c23-4e3c-a650-1bf14da7934b"
@@ -198,6 +199,13 @@
 		{
 			"uuid": "106b9cd7-5431-433b-a043-daf15326de29",
 			"title": "Create main screen",
+			"description": "",
+			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
+			"steps": []
+		},
+		{
+			"uuid": "3d728b7d-2d51-4a30-aa0a-fa4a0a30e121",
+			"title": "Make small UI tweaks",
 			"description": "",
 			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
 			"steps": []

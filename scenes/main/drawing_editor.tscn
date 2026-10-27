@@ -4,6 +4,7 @@
 [ext_resource type="ButtonGroup" uid="uid://br4lgyxmdkspf" path="res://resources/engine/button_groups/tools.tres" id="1_k8h6b"]
 [ext_resource type="Texture2D" uid="uid://bnehwsao2tk01" path="res://resources/visual/icons/palletes.tres" id="1_tkv7h"]
 [ext_resource type="Texture2D" uid="uid://bys1p4ic0yji8" path="res://resources/visual/icons/pixel_perfect.tres" id="2_agl5e"]
+[ext_resource type="Script" uid="uid://ct4rfr3koty3v" path="res://classes/nodes/pixel_option_button.gd" id="2_anbg2"]
 [ext_resource type="Texture2D" uid="uid://cgqils3172v31" path="res://resources/visual/icons/mirror_h.tres" id="2_jo6rw"]
 [ext_resource type="Texture2D" uid="uid://stca172u07gy" path="res://resources/visual/icons/erase.tres" id="2_k8h6b"]
 [ext_resource type="Texture2D" uid="uid://dyb5has4k3diy" path="res://resources/visual/icons/mirror_v.tres" id="3_03ugf"]
@@ -69,7 +70,7 @@ theme_type_variation = &"h_box_small"
 layout_mode = 2
 theme_type_variation = &"h_box_small"
 
-[node name="BrushType" type="OptionButton" parent="VBoxContainer2/ToolBarHBox/BrushOptions" unique_id=613506640]
+[node name="BrushType" type="OptionButton" parent="VBoxContainer2/ToolBarHBox/BrushOptions" unique_id=1935361553]
 custom_maximum_size = Vector2(60, -1)
 layout_mode = 2
 selected = 0
@@ -78,10 +79,13 @@ popup/item_0/text = "Square"
 popup/item_0/id = 0
 popup/item_1/text = "Circle"
 popup/item_1/id = 1
+script = ExtResource("2_anbg2")
+metadata/_custom_type_script = "uid://ct4rfr3koty3v"
 
 [node name="LineEdit" type="SpinBox" parent="VBoxContainer2/ToolBarHBox/BrushOptions" unique_id=1078391711]
 custom_minimum_size = Vector2(62, 0)
 layout_mode = 2
+focus_mode = 2
 min_value = 1.0
 value = 100.0
 suffix = "px"
