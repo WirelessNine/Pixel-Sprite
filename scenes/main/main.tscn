@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dic3hu35lw2cf" path="res://scenes/main/main.gd" id="1_hyk8p"]
 [ext_resource type="PackedScene" uid="uid://ck0868ug76xeu" path="res://scenes/main/drawing_editor.tscn" id="2_iuonh"]
+[ext_resource type="PackedScene" uid="uid://c0nndytlfkolw" path="res://scenes/main/home_screen.tscn" id="2_k2fmo"]
 
 [node name="Main" type="PanelContainer" unique_id=122593638]
 anchors_preset = 15
@@ -70,6 +71,13 @@ drag_to_rearrange_enabled = true
 layout_mode = 2
 size_flags_vertical = 3
 theme_type_variation = &"panel_foreground"
+metadata/_edit_lock_ = true
+
+[node name="HomeScreen" parent="MainVBox/ScreensPanel" unique_id=1268216661 instance=ExtResource("2_k2fmo")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
 
 [node name="DrawingEditor" parent="MainVBox/ScreensPanel" unique_id=1333880969 instance=ExtResource("2_iuonh")]
+unique_name_in_owner = true
 layout_mode = 2

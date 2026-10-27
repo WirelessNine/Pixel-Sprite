@@ -1,5 +1,7 @@
 extends Control
 
+const HOME_TITLE: String = "Home"
+
 @onready var menu_bar: MenuBar = %MenuBar
 
 @onready var file_menu: PopupMenu = %File
@@ -9,6 +11,9 @@ extends Control
 @onready var view_menu: PopupMenu = %View
 
 @onready var tabs: TabBar = %Tabs
+
+@onready var home_screen: VBoxContainer = %HomeScreen
+@onready var drawing_editor: HSplitContainer = %DrawingEditor
 
 
 func _ready() -> void:
@@ -28,12 +33,17 @@ func _handle_scale() -> void:
 		get_window().content_scale_factor = 2.0
 
 
+func _show_home_screen() -> void:
+	home_screen.show()
+	drawing_editor.hide()
+
+
 func _create_home_tab() -> void:
 	for x: int in tabs.tab_count:
-		if tabs.get_tab_title(x) == "Home":
+		if tabs.get_tab_title(x) == HOME_TITLE:
 			return
 
-	tabs.add_tab("Home")
+	tabs.add_tab(HOME_TITLE)
 	var tab_id: int = tabs.tab_count - 1
 
 	tabs.move_tab(tab_id, 0)
@@ -78,3 +88,10 @@ func _create_edit_menu_items() -> void:
 	edit_menu.add_separator()
 
 	edit_menu.add_item("Settings")
+
+
+func _on_tab_changed(tab: int) -> void:
+	var title: String = tabs.get_tab_title(tab)
+
+	if title == HOME_TITLE:
+		_show_home_screen()

@@ -22,6 +22,7 @@
 [ext_resource type="StyleBox" uid="uid://dasa6peb8mllx" path="res://resources/visual/theme/styleboxes/panel/popup.tres" id="7_2cytp"]
 [ext_resource type="Texture2D" uid="uid://clg4i0ph55krd" path="res://resources/visual/theme/atlases/down.tres" id="7_7l0tg"]
 [ext_resource type="StyleBox" uid="uid://rmdpejrxe3uy" path="res://resources/visual/theme/styleboxes/button/tab_normal.tres" id="8_fbrr7"]
+[ext_resource type="Texture2D" uid="uid://dw0302lcwkc0q" path="res://assets/spritesheets/theme.png" id="8_nkwpq"]
 [ext_resource type="Texture2D" uid="uid://ddf8v30ma8mjb" path="res://resources/visual/theme/atlases/close.tres" id="8_wr31a"]
 [ext_resource type="StyleBox" uid="uid://dnfw5hce3pxb4" path="res://resources/visual/theme/styleboxes/button/tab_pressed.tres" id="9_wr31a"]
 [ext_resource type="Texture2D" uid="uid://bhxnx6x6wi5qq" path="res://resources/visual/theme/atlases/radio_checked.tres" id="12_b1wjm"]
@@ -30,6 +31,14 @@
 [ext_resource type="Texture2D" uid="uid://3nhotvjlewpn" path="res://resources/visual/theme/atlases/spin_up.tres" id="13_v4mmg"]
 [ext_resource type="StyleBox" uid="uid://dfs4vf0m1qh2x" path="res://resources/visual/theme/styleboxes/panel/group.tres" id="18_adc10"]
 [ext_resource type="StyleBox" uid="uid://tdhs1cb1ckq2" path="res://resources/visual/theme/styleboxes/separator/v_separator.tres" id="18_g0vgt"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8do48"]
+texture = ExtResource("8_nkwpq")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(0, 16, 16, 16)
 
 [resource]
 default_font = ExtResource("5_qvm3q")
@@ -46,6 +55,13 @@ CheckBox/icons/checked = ExtResource("5_5gs36")
 CheckBox/icons/unchecked = ExtResource("6_uk5rh")
 HSplitContainer/constants/separation = 4
 HSplitContainer/icons/grabber = ExtResource("4_gfnlg")
+ItemList/styles/focus = ExtResource("1_fnphd")
+ItemList/styles/hovered = SubResource("StyleBoxTexture_8do48")
+ItemList/styles/hovered_selected = SubResource("StyleBoxTexture_8do48")
+ItemList/styles/hovered_selected_focus = SubResource("StyleBoxTexture_8do48")
+ItemList/styles/panel = ExtResource("4_2fqcs")
+ItemList/styles/selected = ExtResource("3_8pfkj")
+ItemList/styles/selected_focus = ExtResource("3_8pfkj")
 LineEdit/styles/focus = ExtResource("1_fnphd")
 LineEdit/styles/normal = ExtResource("5_tufs7")
 MenuBar/colors/font_hover_color = Color(0.73300475, 0.73300564, 0.733005, 1)
