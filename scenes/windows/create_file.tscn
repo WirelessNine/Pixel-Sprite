@@ -7,7 +7,6 @@
 custom_minimum_size = Vector2(185, 130)
 offset_right = 185.0
 offset_bottom = 130.0
-theme_type_variation = &"panel_window"
 script = ExtResource("1_vaek0")
 preset = ExtResource("2_kxn3d")
 move_background = true

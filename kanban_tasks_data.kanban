@@ -11,11 +11,11 @@
 			"uuid": "84cd57f6-12c5-480c-a0f1-1cb678652023",
 			"title": "Todo",
 			"tasks": [
+				"57f4bf09-7393-47a5-b1cd-0bba7e5085c4",
 				"432a12bf-46d1-4448-88a5-4d552b963df6",
 				"cec0255e-3735-4a07-9a86-547084b1102d",
 				"a683bdd3-61d0-4843-80a4-61fc589e549d",
 				"20e4a1e8-e7f9-4387-a5ac-8885c94bafab",
-				"57f4bf09-7393-47a5-b1cd-0bba7e5085c4",
 				"fa3dae59-2135-48d8-b6ec-1666050a7a17",
 				"2a9fc0cc-4f42-4383-a338-71cfd57881e3",
 				"97e0342c-8e94-445a-9579-8401d0e6d413",
@@ -39,6 +39,7 @@
 			"uuid": "5aa41546-6933-4bc8-9e92-6dc0b3a92598",
 			"title": "Done",
 			"tasks": [
+				"da84ab91-0126-4766-8b34-e415afd14092",
 				"1a2f4f38-2da6-4719-afd5-329b51147346",
 				"b709dd41-b7b3-435a-a8e7-09d402d2e355",
 				"3d728b7d-2d51-4a30-aa0a-fa4a0a30e121",
@@ -206,6 +207,13 @@
 		{
 			"uuid": "1a2f4f38-2da6-4719-afd5-329b51147346",
 			"title": "Add file creating",
+			"description": "",
+			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
+			"steps": []
+		},
+		{
+			"uuid": "da84ab91-0126-4766-8b34-e415afd14092",
+			"title": "Add a new theme",
 			"description": "",
 			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
 			"steps": []

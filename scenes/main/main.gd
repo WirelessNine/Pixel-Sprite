@@ -13,7 +13,7 @@ const UNNAMED_TITLE: String = "Unnamed %01d"
 
 @onready var tabs: TabBar = %Tabs
 
-@onready var home_screen: VBoxContainer = %HomeScreen
+@onready var home_screen: PanelContainer = %HomeScreen
 @onready var draw_editor: HSplitContainer = %DrawEditor
 
 var current_file_number: int = 0

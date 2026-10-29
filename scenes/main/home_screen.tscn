@@ -7,39 +7,43 @@
 [sub_resource type="LabelSettings" id="LabelSettings_coh76"]
 font_color = Color(0.62152386, 0.62152386, 0.6215238, 1)
 
-[node name="HomeScreen" type="VBoxContainer" unique_id=1268216661]
+[node name="HomeScreen" type="PanelContainer" unique_id=1336072910]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_type_variation = &"panel_group"
+
+[node name="HomeScreen" type="VBoxContainer" parent="." unique_id=1268216661]
+layout_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="TitleHBox" type="HBoxContainer" parent="." unique_id=1020699410]
+[node name="TitleHBox" type="HBoxContainer" parent="HomeScreen" unique_id=1020699410]
 layout_mode = 2
 theme_type_variation = &"h_box_small"
 
-[node name="Icon" type="TextureRect" parent="TitleHBox" unique_id=572379198]
+[node name="Icon" type="TextureRect" parent="HomeScreen/TitleHBox" unique_id=572379198]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 texture = ExtResource("1_r4c7q")
 
-[node name="Title" type="Label" parent="TitleHBox" unique_id=681280675]
+[node name="Title" type="Label" parent="HomeScreen/TitleHBox" unique_id=681280675]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 text = "Pixel
 Sprite"
 label_settings = SubResource("LabelSettings_r4c7q")
 
-[node name="Button" type="Button" parent="TitleHBox" unique_id=1751987593]
+[node name="Button" type="Button" parent="HomeScreen/TitleHBox" unique_id=1751987593]
 layout_mode = 2
 text = "Create File"
 
-[node name="Button2" type="Button" parent="TitleHBox" unique_id=615236966]
+[node name="Button2" type="Button" parent="HomeScreen/TitleHBox" unique_id=615236966]
 layout_mode = 2
 text = "Open File"
 
-[node name="Title2" type="Label" parent="TitleHBox" unique_id=623366731]
+[node name="Title2" type="Label" parent="HomeScreen/TitleHBox" unique_id=623366731]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -48,12 +52,12 @@ text = "WirelessNine <3"
 label_settings = SubResource("LabelSettings_coh76")
 horizontal_alignment = 2
 
-[node name="Label" type="Label" parent="." unique_id=1736154075]
+[node name="Label" type="Label" parent="HomeScreen" unique_id=1736154075]
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 text = "Recent Files"
 vertical_alignment = 2
 
-[node name="RecentFiles" type="ItemList" parent="." unique_id=1642459883]
+[node name="RecentFiles" type="ItemList" parent="HomeScreen" unique_id=1642459883]
 layout_mode = 2
 size_flags_vertical = 3

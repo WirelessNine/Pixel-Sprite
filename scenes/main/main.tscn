@@ -65,7 +65,7 @@ z_index = 1
 layout_mode = 2
 size_flags_horizontal = 3
 offset_transform_enabled = true
-offset_transform_position = Vector2(0, 2)
+offset_transform_position = Vector2(0, 4)
 offset_transform_visual_only = false
 tab_close_display_policy = 2
 drag_to_rearrange_enabled = true
@@ -73,16 +73,16 @@ drag_to_rearrange_enabled = true
 [node name="ScreensPanel" type="PanelContainer" parent="MainVBox" unique_id=1592119909]
 layout_mode = 2
 size_flags_vertical = 3
-theme_type_variation = &"panel_foreground"
+theme_type_variation = &"panel_section"
 metadata/_edit_lock_ = true
 
 [node name="HomeScreen" parent="MainVBox/ScreensPanel" unique_id=1268216661 instance=ExtResource("2_k2fmo")]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 
 [node name="DrawEditor" parent="MainVBox/ScreensPanel" unique_id=1333880969 instance=ExtResource("2_iuonh")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 
 [node name="CreateFile" parent="." unique_id=1823662104 instance=ExtResource("5_6q06x")]

@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://ct4rfr3koty3v" path="res://classes/nodes/pixel_option_button.gd" id="2_anbg2"]
 [ext_resource type="Texture2D" uid="uid://cgqils3172v31" path="res://resources/visual/icons/mirror_h.tres" id="2_jo6rw"]
 [ext_resource type="Texture2D" uid="uid://stca172u07gy" path="res://resources/visual/icons/erase.tres" id="2_k8h6b"]
+[ext_resource type="Texture2D" uid="uid://dpxhpbu8fdhoa" path="res://resources/visual/icons/collapse.tres" id="2_m3me3"]
 [ext_resource type="Texture2D" uid="uid://dyb5has4k3diy" path="res://resources/visual/icons/mirror_v.tres" id="3_03ugf"]
 [ext_resource type="Texture2D" uid="uid://c7yatmklip68l" path="res://resources/visual/icons/continuous.tres" id="3_anbg2"]
 [ext_resource type="Texture2D" uid="uid://bn11fy5oiw7qi" path="res://resources/visual/icons/eyedropper.tres" id="3_tkv7h"]
@@ -22,56 +23,72 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 4
-split_offsets = PackedInt32Array(150)
-split_offset = 150
+split_offsets = PackedInt32Array(16)
+split_offset = 16
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1350751943]
+[node name="InspectorPanel" type="PanelContainer" parent="." unique_id=1994427665]
+layout_mode = 2
+theme_type_variation = &"panel_group"
+
+[node name="InspectorVBox" type="VBoxContainer" parent="InspectorPanel" unique_id=1350751943]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
-theme_type_variation = &"v_box_small"
+theme_type_variation = &"v_box_inner"
 
-[node name="Pallete" type="PanelContainer" parent="VBoxContainer" unique_id=1400635171]
+[node name="Pallete" type="PanelContainer" parent="InspectorPanel/InspectorVBox" unique_id=1400635171]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 size_flags_vertical = 3
 theme_type_variation = &"panel_inset"
 
-[node name="HFlowContainer" type="HFlowContainer" parent="VBoxContainer/Pallete" unique_id=903588244]
+[node name="HFlowContainer" type="HFlowContainer" parent="InspectorPanel/InspectorVBox/Pallete" unique_id=903588244]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=2087877563]
+[node name="HBoxContainer" type="HBoxContainer" parent="InspectorPanel/InspectorVBox" unique_id=2087877563]
 layout_mode = 2
-theme_type_variation = &"h_box_small"
+theme_type_variation = &"h_box_inner"
 
-[node name="ColorPickerButton" type="ColorPickerButton" parent="VBoxContainer/HBoxContainer" unique_id=1133600285]
+[node name="ColorPickerButton" type="ColorPickerButton" parent="InspectorPanel/InspectorVBox/HBoxContainer" unique_id=1133600285]
 custom_minimum_size = Vector2(0, 15.07)
 layout_mode = 2
 size_flags_horizontal = 3
 edit_intensity = false
 
-[node name="Palletes" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1492951698]
+[node name="Palletes" type="Button" parent="InspectorPanel/InspectorVBox/HBoxContainer" unique_id=1492951698]
 layout_mode = 2
 icon = ExtResource("1_tkv7h")
 
-[node name="Layers" type="PanelContainer" parent="VBoxContainer" unique_id=1866848093]
+[node name="Layers" type="PanelContainer" parent="InspectorPanel/InspectorVBox" unique_id=1866848093]
 layout_mode = 2
 size_flags_vertical = 3
+theme_type_variation = &"panel_inset"
+
+[node name="CanvasPanel" type="PanelContainer" parent="." unique_id=1188823666]
+layout_mode = 2
 theme_type_variation = &"panel_group"
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=2024466838]
+[node name="CanvasVBox" type="VBoxContainer" parent="CanvasPanel" unique_id=2024466838]
 layout_mode = 2
-theme_type_variation = &"v_box_small"
+theme_type_variation = &"v_box_inner"
 
-[node name="ToolBarHBox" type="HBoxContainer" parent="VBoxContainer2" unique_id=670039776]
+[node name="ToolsHBox" type="HBoxContainer" parent="CanvasPanel/CanvasVBox" unique_id=670039776]
+layout_mode = 2
+theme_type_variation = &"h_box_inner"
+
+[node name="Collapse" type="Button" parent="CanvasPanel/CanvasVBox/ToolsHBox" unique_id=944520908]
+layout_mode = 2
+toggle_mode = true
+icon = ExtResource("2_m3me3")
+
+[node name="VSeparator" type="VSeparator" parent="CanvasPanel/CanvasVBox/ToolsHBox" unique_id=808259911]
+layout_mode = 2
+
+[node name="BrushOptions" type="HBoxContainer" parent="CanvasPanel/CanvasVBox/ToolsHBox" unique_id=1484801831]
 layout_mode = 2
 theme_type_variation = &"h_box_small"
 
-[node name="BrushOptions" type="HBoxContainer" parent="VBoxContainer2/ToolBarHBox" unique_id=1484801831]
-layout_mode = 2
-theme_type_variation = &"h_box_small"
-
-[node name="BrushType" type="OptionButton" parent="VBoxContainer2/ToolBarHBox/BrushOptions" unique_id=1935361553]
-custom_maximum_size = Vector2(60, -1)
+[node name="BrushType" type="OptionButton" parent="CanvasPanel/CanvasVBox/ToolsHBox/BrushOptions" unique_id=1935361553]
+custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
 selected = 0
 item_count = 2
@@ -82,46 +99,47 @@ popup/item_1/id = 1
 script = ExtResource("2_anbg2")
 metadata/_custom_type_script = "uid://ct4rfr3koty3v"
 
-[node name="LineEdit" type="SpinBox" parent="VBoxContainer2/ToolBarHBox/BrushOptions" unique_id=1078391711]
-custom_minimum_size = Vector2(62, 0)
+[node name="LineEdit" type="SpinBox" parent="CanvasPanel/CanvasVBox/ToolsHBox/BrushOptions" unique_id=1078391711]
+custom_minimum_size = Vector2(70, 0)
 layout_mode = 2
+size_flags_horizontal = 3
 focus_mode = 2
 min_value = 1.0
 value = 100.0
 suffix = "px"
 
-[node name="PixelPerfect" type="Button" parent="VBoxContainer2/ToolBarHBox" unique_id=817469909]
+[node name="PixelPerfect" type="Button" parent="CanvasPanel/CanvasVBox/ToolsHBox" unique_id=817469909]
 layout_mode = 2
 toggle_mode = true
 action_mode = 0
 icon = ExtResource("2_agl5e")
 
-[node name="Continuous" type="Button" parent="VBoxContainer2/ToolBarHBox" unique_id=938685418]
+[node name="Continuous" type="Button" parent="CanvasPanel/CanvasVBox/ToolsHBox" unique_id=938685418]
 layout_mode = 2
 toggle_mode = true
 action_mode = 0
 icon = ExtResource("3_anbg2")
 
-[node name="MirrorOptions" type="HBoxContainer" parent="VBoxContainer2/ToolBarHBox" unique_id=765071271]
+[node name="MirrorOptions" type="HBoxContainer" parent="CanvasPanel/CanvasVBox/ToolsHBox" unique_id=765071271]
 layout_mode = 2
-theme_type_variation = &"h_box_small"
+theme_type_variation = &"h_box_inner"
 
-[node name="MirrorH" type="Button" parent="VBoxContainer2/ToolBarHBox/MirrorOptions" unique_id=274880864]
+[node name="MirrorH" type="Button" parent="CanvasPanel/CanvasVBox/ToolsHBox/MirrorOptions" unique_id=274880864]
 layout_mode = 2
 toggle_mode = true
 icon = ExtResource("2_jo6rw")
 
-[node name="MirrorV" type="Button" parent="VBoxContainer2/ToolBarHBox/MirrorOptions" unique_id=1406070827]
+[node name="MirrorV" type="Button" parent="CanvasPanel/CanvasVBox/ToolsHBox/MirrorOptions" unique_id=1406070827]
 layout_mode = 2
 toggle_mode = true
 icon = ExtResource("3_03ugf")
 
-[node name="Tools" type="HBoxContainer" parent="VBoxContainer2/ToolBarHBox" unique_id=2111203284]
+[node name="Tools" type="HBoxContainer" parent="CanvasPanel/CanvasVBox/ToolsHBox" unique_id=2111203284]
 layout_mode = 2
 size_flags_horizontal = 10
-theme_type_variation = &"h_box_small"
+theme_type_variation = &"h_box_inner"
 
-[node name="Draw" type="Button" parent="VBoxContainer2/ToolBarHBox/Tools" unique_id=117552682]
+[node name="Draw" type="Button" parent="CanvasPanel/CanvasVBox/ToolsHBox/Tools" unique_id=117552682]
 layout_mode = 2
 toggle_mode = true
 button_pressed = true
@@ -129,49 +147,49 @@ action_mode = 0
 button_group = ExtResource("1_k8h6b")
 icon = ExtResource("1_fkbgr")
 
-[node name="Erase" type="Button" parent="VBoxContainer2/ToolBarHBox/Tools" unique_id=1374328994]
+[node name="Erase" type="Button" parent="CanvasPanel/CanvasVBox/ToolsHBox/Tools" unique_id=1374328994]
 layout_mode = 2
 toggle_mode = true
 action_mode = 0
 button_group = ExtResource("1_k8h6b")
 icon = ExtResource("2_k8h6b")
 
-[node name="Eyedropper" type="Button" parent="VBoxContainer2/ToolBarHBox/Tools" unique_id=907221563]
+[node name="Eyedropper" type="Button" parent="CanvasPanel/CanvasVBox/ToolsHBox/Tools" unique_id=907221563]
 layout_mode = 2
 toggle_mode = true
 action_mode = 0
 button_group = ExtResource("1_k8h6b")
 icon = ExtResource("3_tkv7h")
 
-[node name="Fill" type="Button" parent="VBoxContainer2/ToolBarHBox/Tools" unique_id=297255835]
+[node name="Fill" type="Button" parent="CanvasPanel/CanvasVBox/ToolsHBox/Tools" unique_id=297255835]
 layout_mode = 2
 toggle_mode = true
 action_mode = 0
 button_group = ExtResource("1_k8h6b")
 icon = ExtResource("4_jo6rw")
 
-[node name="Line" type="Button" parent="VBoxContainer2/ToolBarHBox/Tools" unique_id=448024703]
+[node name="Line" type="Button" parent="CanvasPanel/CanvasVBox/ToolsHBox/Tools" unique_id=448024703]
 layout_mode = 2
 toggle_mode = true
 action_mode = 0
 button_group = ExtResource("1_k8h6b")
 icon = ExtResource("5_03ugf")
 
-[node name="Shape" type="Button" parent="VBoxContainer2/ToolBarHBox/Tools" unique_id=1922452845]
+[node name="Shape" type="Button" parent="CanvasPanel/CanvasVBox/ToolsHBox/Tools" unique_id=1922452845]
 layout_mode = 2
 toggle_mode = true
 action_mode = 0
 button_group = ExtResource("1_k8h6b")
 icon = ExtResource("6_oefrb")
 
-[node name="Select" type="Button" parent="VBoxContainer2/ToolBarHBox/Tools" unique_id=252266340]
+[node name="Select" type="Button" parent="CanvasPanel/CanvasVBox/ToolsHBox/Tools" unique_id=252266340]
 layout_mode = 2
 toggle_mode = true
 action_mode = 0
 button_group = ExtResource("1_k8h6b")
 icon = ExtResource("7_agl5e")
 
-[node name="Canvas" type="PanelContainer" parent="VBoxContainer2" unique_id=1041828052]
+[node name="Canvas" type="PanelContainer" parent="CanvasPanel/CanvasVBox" unique_id=1041828052]
 layout_mode = 2
 size_flags_vertical = 3
-theme_type_variation = &"panel_section"
+theme_type_variation = &"panel_inset"
