@@ -5,6 +5,14 @@ var file_path: String = ""
 var title: String
 var canvas_size: Vector2i
 
+var palette: ColorPalette
+
+var mirror_h_enabled: bool = false
+var mirror_h_pos: int
+
+var mirror_v_enabled: bool = false
+var mirror_v_pos: int
+
 var current_layer: Layer
 var layers: Array[Layer]
 

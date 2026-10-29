@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://ck0868ug76xeu"]
 
+[ext_resource type="Script" uid="uid://b6f301d0ny5v4" path="res://scenes/main/draw_editor.gd" id="1_esk3g"]
 [ext_resource type="Texture2D" uid="uid://dum2fl4dunfxh" path="res://resources/visual/icons/draw.tres" id="1_fkbgr"]
 [ext_resource type="ButtonGroup" uid="uid://br4lgyxmdkspf" path="res://resources/engine/button_groups/tools.tres" id="1_k8h6b"]
 [ext_resource type="Texture2D" uid="uid://bnehwsao2tk01" path="res://resources/visual/icons/palletes.tres" id="1_tkv7h"]
@@ -26,6 +27,7 @@ grow_vertical = 2
 theme_override_constants/separation = 4
 split_offsets = PackedInt32Array(16)
 split_offset = 16
+script = ExtResource("1_esk3g")
 
 [node name="InspectorPanel" type="PanelContainer" parent="." unique_id=1994427665]
 layout_mode = 2
@@ -49,13 +51,14 @@ layout_mode = 2
 layout_mode = 2
 theme_type_variation = &"h_box_inner"
 
-[node name="ColorPickerButton" type="ColorPickerButton" parent="InspectorPanel/InspectorVBox/HBoxContainer" unique_id=1133600285]
+[node name="ColorPicker" type="ColorPickerButton" parent="InspectorPanel/InspectorVBox/HBoxContainer" unique_id=1133600285]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 15.07)
 layout_mode = 2
 size_flags_horizontal = 3
 edit_intensity = false
 
-[node name="Palletes" type="Button" parent="InspectorPanel/InspectorVBox/HBoxContainer" unique_id=1492951698]
+[node name="Palettes" type="Button" parent="InspectorPanel/InspectorVBox/HBoxContainer" unique_id=1492951698]
 layout_mode = 2
 icon = ExtResource("1_tkv7h")
 
@@ -77,6 +80,7 @@ layout_mode = 2
 theme_type_variation = &"h_box_inner"
 
 [node name="Collapse" type="Button" parent="CanvasPanel/CanvasVBox/ToolsHBox" unique_id=944520908]
+unique_name_in_owner = true
 layout_mode = 2
 toggle_mode = true
 icon = ExtResource("2_m3me3")
@@ -85,10 +89,12 @@ icon = ExtResource("2_m3me3")
 layout_mode = 2
 
 [node name="BrushOptions" type="HBoxContainer" parent="CanvasPanel/CanvasVBox/ToolsHBox" unique_id=1484801831]
+unique_name_in_owner = true
 layout_mode = 2
-theme_type_variation = &"h_box_small"
+theme_type_variation = &"h_box_inner"
 
 [node name="BrushType" type="OptionButton" parent="CanvasPanel/CanvasVBox/ToolsHBox/BrushOptions" unique_id=1935361553]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
 selected = 0
@@ -100,37 +106,43 @@ popup/item_1/id = 1
 script = ExtResource("2_anbg2")
 metadata/_custom_type_script = "uid://ct4rfr3koty3v"
 
-[node name="LineEdit" type="SpinBox" parent="CanvasPanel/CanvasVBox/ToolsHBox/BrushOptions" unique_id=1078391711]
+[node name="BrushSize" type="SpinBox" parent="CanvasPanel/CanvasVBox/ToolsHBox/BrushOptions" unique_id=1078391711]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(70, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 2
 min_value = 1.0
-value = 100.0
+value = 1.0
 suffix = "px"
 
 [node name="PixelPerfect" type="Button" parent="CanvasPanel/CanvasVBox/ToolsHBox" unique_id=817469909]
+unique_name_in_owner = true
 layout_mode = 2
 toggle_mode = true
 action_mode = 0
 icon = ExtResource("2_agl5e")
 
 [node name="Continuous" type="Button" parent="CanvasPanel/CanvasVBox/ToolsHBox" unique_id=938685418]
+unique_name_in_owner = true
 layout_mode = 2
 toggle_mode = true
 action_mode = 0
 icon = ExtResource("3_anbg2")
 
 [node name="MirrorOptions" type="HBoxContainer" parent="CanvasPanel/CanvasVBox/ToolsHBox" unique_id=765071271]
+unique_name_in_owner = true
 layout_mode = 2
 theme_type_variation = &"h_box_inner"
 
 [node name="MirrorH" type="Button" parent="CanvasPanel/CanvasVBox/ToolsHBox/MirrorOptions" unique_id=274880864]
+unique_name_in_owner = true
 layout_mode = 2
 toggle_mode = true
 icon = ExtResource("2_jo6rw")
 
 [node name="MirrorV" type="Button" parent="CanvasPanel/CanvasVBox/ToolsHBox/MirrorOptions" unique_id=1406070827]
+unique_name_in_owner = true
 layout_mode = 2
 toggle_mode = true
 icon = ExtResource("3_03ugf")
@@ -141,6 +153,7 @@ size_flags_horizontal = 10
 theme_type_variation = &"h_box_inner"
 
 [node name="Draw" type="Button" parent="CanvasPanel/CanvasVBox/ToolsHBox/Tools" unique_id=117552682]
+unique_name_in_owner = true
 layout_mode = 2
 toggle_mode = true
 button_pressed = true
@@ -149,6 +162,7 @@ button_group = ExtResource("1_k8h6b")
 icon = ExtResource("1_fkbgr")
 
 [node name="Erase" type="Button" parent="CanvasPanel/CanvasVBox/ToolsHBox/Tools" unique_id=1374328994]
+unique_name_in_owner = true
 layout_mode = 2
 toggle_mode = true
 action_mode = 0
@@ -156,6 +170,7 @@ button_group = ExtResource("1_k8h6b")
 icon = ExtResource("2_k8h6b")
 
 [node name="Eyedropper" type="Button" parent="CanvasPanel/CanvasVBox/ToolsHBox/Tools" unique_id=907221563]
+unique_name_in_owner = true
 layout_mode = 2
 toggle_mode = true
 action_mode = 0
@@ -163,6 +178,7 @@ button_group = ExtResource("1_k8h6b")
 icon = ExtResource("3_tkv7h")
 
 [node name="Fill" type="Button" parent="CanvasPanel/CanvasVBox/ToolsHBox/Tools" unique_id=297255835]
+unique_name_in_owner = true
 layout_mode = 2
 toggle_mode = true
 action_mode = 0
@@ -170,6 +186,7 @@ button_group = ExtResource("1_k8h6b")
 icon = ExtResource("4_jo6rw")
 
 [node name="Line" type="Button" parent="CanvasPanel/CanvasVBox/ToolsHBox/Tools" unique_id=448024703]
+unique_name_in_owner = true
 layout_mode = 2
 toggle_mode = true
 action_mode = 0
@@ -177,6 +194,7 @@ button_group = ExtResource("1_k8h6b")
 icon = ExtResource("5_03ugf")
 
 [node name="Shape" type="Button" parent="CanvasPanel/CanvasVBox/ToolsHBox/Tools" unique_id=1922452845]
+unique_name_in_owner = true
 layout_mode = 2
 toggle_mode = true
 action_mode = 0
@@ -184,6 +202,7 @@ button_group = ExtResource("1_k8h6b")
 icon = ExtResource("6_oefrb")
 
 [node name="Select" type="Button" parent="CanvasPanel/CanvasVBox/ToolsHBox/Tools" unique_id=252266340]
+unique_name_in_owner = true
 layout_mode = 2
 toggle_mode = true
 action_mode = 0
@@ -199,6 +218,10 @@ theme_type_variation = &"panel_inset"
 layout_mode = 2
 
 [node name="DrawCanvas" parent="CanvasPanel/CanvasVBox/Canvas/ScrollContainer" unique_id=63928419 instance=ExtResource("16_bwlaj")]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+offset_transform_visual_only = false
+
+[connection signal="gui_input" from="CanvasPanel/CanvasVBox/Canvas" to="." method="_on_canvas_gui_input"]

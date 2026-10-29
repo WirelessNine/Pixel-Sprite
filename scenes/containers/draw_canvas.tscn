@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cks5ukck18gdp"]
 
 [ext_resource type="Script" uid="uid://cvulcsj38andu" path="res://scenes/containers/draw_canvas.gd" id="1_8veym"]
+[ext_resource type="Texture2D" uid="uid://bs5wmbcjsp41i" path="res://resources/visual/icons/background.tres" id="2_s4xyv"]
 
 [node name="DrawCanvas" type="CenterContainer" unique_id=63928419]
 anchors_preset = 15
@@ -8,12 +9,21 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
 script = ExtResource("1_8veym")
 metadata/_edit_lock_ = true
 
 [node name="InputLayer" type="Control" parent="." unique_id=1996553927]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
+
+[node name="Background" type="TextureRect" parent="." unique_id=136693480]
+show_behind_parent = true
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+texture = ExtResource("2_s4xyv")
+expand_mode = 1
+stretch_mode = 1
 
 [node name="PreviewLayer" type="TextureRect" parent="." unique_id=253320603]
 layout_mode = 2

@@ -14,7 +14,7 @@ const UNNAMED_TITLE: String = "Unnamed %01d"
 @onready var tabs: TabBar = %Tabs
 
 @onready var home_screen: PanelContainer = %HomeScreen
-@onready var draw_editor: HSplitContainer = %DrawEditor
+@onready var draw_editor: DrawEditor = %DrawEditor
 
 @onready var background_rect: ColorRect = $Dialogs/Background
 
@@ -26,8 +26,6 @@ func _ready() -> void:
 
 	_connect_signals()
 
-	_handle_scale()
-
 	_create_home_tab()
 	_create_edit_menu_items()
 
@@ -36,15 +34,6 @@ func _connect_signals() -> void:
 	tabs.tab_changed.connect(_on_tab_changed)
 
 	Events.file_created.connect(_on_file_created)
-
-
-func _handle_scale() -> void:
-	var window_size_y: int = get_window().size.y
-
-	if window_size_y >= 1200:
-		get_window().content_scale_factor = 5.0
-	else:
-		get_window().content_scale_factor = 2.0
 
 
 func _show_home_screen() -> void:
@@ -105,6 +94,7 @@ func _on_tab_changed(tab: int) -> void:
 		_show_home_screen()
 	else:
 		_show_draw_editor()
+		draw_editor.update_editor(tabs.get_tab_metadata(tab))
 
 
 func _on_file_created(file: FileInstance) -> void:
