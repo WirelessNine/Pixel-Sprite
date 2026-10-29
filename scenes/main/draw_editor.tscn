@@ -214,14 +214,19 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_type_variation = &"panel_inset"
 
-[node name="ScrollContainer" type="ScrollContainer" parent="CanvasPanel/CanvasVBox/Canvas" unique_id=972038284]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasPanel/CanvasVBox/Canvas" unique_id=481280414]
 layout_mode = 2
+stretch = true
 
-[node name="DrawCanvas" parent="CanvasPanel/CanvasVBox/Canvas/ScrollContainer" unique_id=63928419 instance=ExtResource("16_bwlaj")]
+[node name="SubViewport" type="SubViewport" parent="CanvasPanel/CanvasVBox/Canvas/SubViewportContainer" unique_id=865960219]
+disable_3d = true
+handle_input_locally = false
+snap_2d_vertices_to_pixel = true
+canvas_item_default_texture_filter = 0
+size = Vector2i(786, 503)
+render_target_update_mode = 4
+
+[node name="DrawCanvas" parent="CanvasPanel/CanvasVBox/Canvas/SubViewportContainer/SubViewport" unique_id=1608915322 instance=ExtResource("16_bwlaj")]
 unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-offset_transform_visual_only = false
 
 [connection signal="gui_input" from="CanvasPanel/CanvasVBox/Canvas" to="." method="_on_canvas_gui_input"]

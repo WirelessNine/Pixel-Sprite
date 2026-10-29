@@ -1,5 +1,5 @@
 class_name DrawCanvas
-extends CenterContainer
+extends Node2D
 
 const ERASE_MATERIAL: BlitMaterial = preload("uid://dy8yhdx5od8lf")
 
@@ -7,6 +7,7 @@ var layers: Array[TextureRect]
 
 var preview_texture: DrawableTexture2D
 
+@onready var camera: Camera2D = $Camera
 @onready var input_layer: Control = $InputLayer
 @onready var background: TextureRect = $Background
 @onready var preview_layer: TextureRect = $PreviewLayer
@@ -89,5 +90,7 @@ func _create_layer(texture: DrawableTexture2D) -> TextureRect:
 
 	layers.append(rect)
 	add_child(rect)
+
+	rect.set_anchors_and_offsets_preset(Control.PRESET_CENTER)
 
 	return rect

@@ -22,6 +22,8 @@ var current_file_number: int = 0
 
 
 func _ready() -> void:
+	RenderingServer.set_default_clear_color(Color("14182e"))
+
 	MenuManager.set_background(background_rect)
 
 	_connect_signals()

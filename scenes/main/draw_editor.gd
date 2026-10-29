@@ -53,6 +53,8 @@ var last_point: Vector2i
 
 
 func _ready() -> void:
+	update_tool_options()
+
 	_connect_signals()
 
 
@@ -73,6 +75,28 @@ func set_tool(toggled_on: bool, new_tool: Tool) -> void:
 		return
 
 	tool = new_tool
+	update_tool_options()
+
+
+func update_tool_options() -> void:
+	brush_options_box.hide()
+	pixel_perfect_button.hide()
+	continuous_button.hide()
+	mirror_options_box.hide()
+
+	match tool:
+		Tool.DRAW, Tool.ERASE:
+			brush_options_box.show()
+			pixel_perfect_button.show()
+			mirror_options_box.show()
+		Tool.FILL:
+			continuous_button.show()
+			mirror_options_box.show()
+		Tool.LINE, Tool.SHAPE:
+			brush_options_box.show()
+			mirror_options_box.show()
+		Tool.SELECT:
+			mirror_options_box.show()
 
 
 func update_brush_texture() -> void:
@@ -170,6 +194,9 @@ func _get_canvas_mouse_pos() -> Vector2i:
 
 
 func _on_canvas_gui_input(event: InputEvent) -> void:
+	if event.device < 1:
+		return
+
 	match tool:
 		Tool.DRAW, Tool.ERASE:
 			if not event is InputEventMouse:

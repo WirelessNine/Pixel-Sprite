@@ -11,12 +11,11 @@
 			"uuid": "84cd57f6-12c5-480c-a0f1-1cb678652023",
 			"title": "Todo",
 			"tasks": [
+				"8c8d0cfd-a4d6-4d4c-a516-6275d81a4e9f",
 				"432a12bf-46d1-4448-88a5-4d552b963df6",
 				"cec0255e-3735-4a07-9a86-547084b1102d",
 				"a683bdd3-61d0-4843-80a4-61fc589e549d",
 				"20e4a1e8-e7f9-4387-a5ac-8885c94bafab",
-				"2a9fc0cc-4f42-4383-a338-71cfd57881e3",
-				"97e0342c-8e94-445a-9579-8401d0e6d413",
 				"b85560bd-518f-4a1c-836c-516d4c3ae090",
 				"9628b620-a810-4595-a33c-0c62114a73c2",
 				"a436ca15-6f7e-488d-aa63-30e08d301515",
@@ -37,6 +36,7 @@
 			"uuid": "5aa41546-6933-4bc8-9e92-6dc0b3a92598",
 			"title": "Done",
 			"tasks": [
+				"b2b85352-b1d6-48be-8218-57017b12cb1c",
 				"fa3dae59-2135-48d8-b6ec-1666050a7a17",
 				"57f4bf09-7393-47a5-b1cd-0bba7e5085c4",
 				"da84ab91-0126-4766-8b34-e415afd14092",
@@ -102,20 +102,6 @@
 		{
 			"uuid": "fa3dae59-2135-48d8-b6ec-1666050a7a17",
 			"title": "Add simple drawing and erasing",
-			"description": "",
-			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
-			"steps": []
-		},
-		{
-			"uuid": "2a9fc0cc-4f42-4383-a338-71cfd57881e3",
-			"title": "Add variable brush sizes",
-			"description": "",
-			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
-			"steps": []
-		},
-		{
-			"uuid": "97e0342c-8e94-445a-9579-8401d0e6d413",
-			"title": "Add circle brushes",
 			"description": "",
 			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
 			"steps": []
@@ -214,6 +200,20 @@
 		{
 			"uuid": "da84ab91-0126-4766-8b34-e415afd14092",
 			"title": "Add a new theme",
+			"description": "",
+			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
+			"steps": []
+		},
+		{
+			"uuid": "b2b85352-b1d6-48be-8218-57017b12cb1c",
+			"title": "Make the draw canvas Node2D with Subviewport",
+			"description": "",
+			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
+			"steps": []
+		},
+		{
+			"uuid": "8c8d0cfd-a4d6-4d4c-a516-6275d81a4e9f",
+			"title": "Dynamically hide tool options",
 			"description": "",
 			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
 			"steps": []
