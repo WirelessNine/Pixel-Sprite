@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://c0nndytlfkolw"]
 
+[ext_resource type="Script" uid="uid://b0qkymnjf3w50" path="res://scenes/main/home_screen.gd" id="1_coh76"]
 [ext_resource type="Texture2D" uid="uid://dum2fl4dunfxh" path="res://resources/visual/icons/draw.tres" id="1_r4c7q"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_r4c7q"]
@@ -14,6 +15,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_type_variation = &"panel_group"
+script = ExtResource("1_coh76")
 
 [node name="HomeScreen" type="VBoxContainer" parent="." unique_id=1268216661]
 layout_mode = 2
@@ -61,3 +63,5 @@ vertical_alignment = 2
 [node name="RecentFiles" type="ItemList" parent="HomeScreen" unique_id=1642459883]
 layout_mode = 2
 size_flags_vertical = 3
+
+[connection signal="pressed" from="HomeScreen/TitleHBox/Button" to="." method="_on_button_pressed"]
