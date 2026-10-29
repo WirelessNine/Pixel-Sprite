@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://b76wti6pcmn0g" path="res://resources/visual/icons/line.tres" id="5_03ugf"]
 [ext_resource type="Texture2D" uid="uid://dgnppp1b1s1g8" path="res://resources/visual/icons/shape.tres" id="6_oefrb"]
 [ext_resource type="Texture2D" uid="uid://cku7mrs5qp0hc" path="res://resources/visual/icons/select.tres" id="7_agl5e"]
+[ext_resource type="PackedScene" uid="uid://cks5ukck18gdp" path="res://scenes/containers/draw_canvas.tscn" id="16_bwlaj"]
 
 [node name="DrawEditor" type="HSplitContainer" unique_id=76540871]
 anchors_preset = 15
@@ -193,3 +194,11 @@ icon = ExtResource("7_agl5e")
 layout_mode = 2
 size_flags_vertical = 3
 theme_type_variation = &"panel_inset"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasPanel/CanvasVBox/Canvas" unique_id=972038284]
+layout_mode = 2
+
+[node name="DrawCanvas" parent="CanvasPanel/CanvasVBox/Canvas/ScrollContainer" unique_id=63928419 instance=ExtResource("16_bwlaj")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3

@@ -16,10 +16,14 @@ const UNNAMED_TITLE: String = "Unnamed %01d"
 @onready var home_screen: PanelContainer = %HomeScreen
 @onready var draw_editor: HSplitContainer = %DrawEditor
 
+@onready var background_rect: ColorRect = $Dialogs/Background
+
 var current_file_number: int = 0
 
 
 func _ready() -> void:
+	MenuManager.set_background(background_rect)
+
 	_connect_signals()
 
 	_handle_scale()
