@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://dgnppp1b1s1g8" path="res://resources/visual/icons/shape.tres" id="6_oefrb"]
 [ext_resource type="Texture2D" uid="uid://cku7mrs5qp0hc" path="res://resources/visual/icons/select.tres" id="7_agl5e"]
 [ext_resource type="PackedScene" uid="uid://cks5ukck18gdp" path="res://scenes/containers/draw_canvas.tscn" id="16_bwlaj"]
+[ext_resource type="Script" uid="uid://bwntk4mvvpukq" path="res://scenes/main/canvas_view.gd" id="17_3k5hd"]
 
 [node name="DrawEditor" type="HSplitContainer" unique_id=76540871]
 anchors_preset = 15
@@ -209,24 +210,30 @@ action_mode = 0
 button_group = ExtResource("1_k8h6b")
 icon = ExtResource("7_agl5e")
 
-[node name="Canvas" type="PanelContainer" parent="CanvasPanel/CanvasVBox" unique_id=1041828052]
+[node name="CanvasPanel" type="PanelContainer" parent="CanvasPanel/CanvasVBox" unique_id=1041828052]
 layout_mode = 2
 size_flags_vertical = 3
 theme_type_variation = &"panel_inset"
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasPanel/CanvasVBox/Canvas" unique_id=481280414]
+[node name="CanvasView" type="ColorRect" parent="CanvasPanel/CanvasVBox/CanvasPanel" unique_id=538068769]
+clip_children = 1
 layout_mode = 2
-stretch = true
+mouse_filter = 1
+script = ExtResource("17_3k5hd")
 
-[node name="SubViewport" type="SubViewport" parent="CanvasPanel/CanvasVBox/Canvas/SubViewportContainer" unique_id=865960219]
-disable_3d = true
-handle_input_locally = false
-snap_2d_vertices_to_pixel = true
-canvas_item_default_texture_filter = 0
-size = Vector2i(786, 503)
-render_target_update_mode = 4
-
-[node name="DrawCanvas" parent="CanvasPanel/CanvasVBox/Canvas/SubViewportContainer/SubViewport" unique_id=1608915322 instance=ExtResource("16_bwlaj")]
+[node name="DrawCanvas" parent="CanvasPanel/CanvasVBox/CanvasPanel/CanvasView" unique_id=136693480 instance=ExtResource("16_bwlaj")]
 unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 128.0
+offset_bottom = 128.0
+grow_horizontal = 1
+grow_vertical = 1
 
-[connection signal="gui_input" from="CanvasPanel/CanvasVBox/Canvas" to="." method="_on_canvas_gui_input"]
+[connection signal="gui_input" from="CanvasPanel/CanvasVBox/CanvasPanel" to="." method="_on_canvas_gui_input"]

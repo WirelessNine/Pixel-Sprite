@@ -70,10 +70,7 @@ func update_editor(new_file: FileInstance) -> void:
 	draw_canvas.refresh_layers(new_file)
 
 
-func set_tool(toggled_on: bool, new_tool: Tool) -> void:
-	if not toggled_on:
-		return
-
+func set_tool(new_tool: Tool) -> void:
 	tool = new_tool
 	update_tool_options()
 
@@ -167,13 +164,13 @@ func draw_input(event: InputEventMouse, erase: bool) -> void:
 
 
 func _connect_signals() -> void:
-	draw_tool.toggled.connect(set_tool.bind(Tool.DRAW))
-	erase_tool.toggled.connect(set_tool.bind(Tool.ERASE))
-	eyedropper_tool.toggled.connect(set_tool.bind(Tool.EYEDROPPER))
-	fill_tool.toggled.connect(set_tool.bind(Tool.FILL))
-	line_tool.toggled.connect(set_tool.bind(Tool.LINE))
-	shape_tool.toggled.connect(set_tool.bind(Tool.SHAPE))
-	select_tool.toggled.connect(set_tool.bind(Tool.SELECT))
+	draw_tool.pressed.connect(set_tool.bind(Tool.DRAW))
+	erase_tool.pressed.connect(set_tool.bind(Tool.ERASE))
+	eyedropper_tool.pressed.connect(set_tool.bind(Tool.EYEDROPPER))
+	fill_tool.pressed.connect(set_tool.bind(Tool.FILL))
+	line_tool.pressed.connect(set_tool.bind(Tool.LINE))
+	shape_tool.pressed.connect(set_tool.bind(Tool.SHAPE))
+	select_tool.pressed.connect(set_tool.bind(Tool.SELECT))
 
 	brush_type_option.item_selected.connect(
 		func(index: int) -> void:
@@ -190,7 +187,7 @@ func _connect_signals() -> void:
 
 
 func _get_canvas_mouse_pos() -> Vector2i:
-	return Vector2i(draw_canvas.input_layer.get_local_mouse_position())
+	return Vector2i(draw_canvas.get_local_mouse_position())
 
 
 func _on_canvas_gui_input(event: InputEvent) -> void:

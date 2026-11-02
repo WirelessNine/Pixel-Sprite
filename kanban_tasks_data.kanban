@@ -11,7 +11,6 @@
 			"uuid": "84cd57f6-12c5-480c-a0f1-1cb678652023",
 			"title": "Todo",
 			"tasks": [
-				"8c8d0cfd-a4d6-4d4c-a516-6275d81a4e9f",
 				"432a12bf-46d1-4448-88a5-4d552b963df6",
 				"cec0255e-3735-4a07-9a86-547084b1102d",
 				"a683bdd3-61d0-4843-80a4-61fc589e549d",
@@ -36,6 +35,7 @@
 			"uuid": "5aa41546-6933-4bc8-9e92-6dc0b3a92598",
 			"title": "Done",
 			"tasks": [
+				"0df511df-e9a6-4a72-ad43-f44640f4bcf2",
 				"b2b85352-b1d6-48be-8218-57017b12cb1c",
 				"fa3dae59-2135-48d8-b6ec-1666050a7a17",
 				"57f4bf09-7393-47a5-b1cd-0bba7e5085c4",
@@ -212,8 +212,8 @@
 			"steps": []
 		},
 		{
-			"uuid": "8c8d0cfd-a4d6-4d4c-a516-6275d81a4e9f",
-			"title": "Dynamically hide tool options",
+			"uuid": "0df511df-e9a6-4a72-ad43-f44640f4bcf2",
+			"title": "Make Canvas control component",
 			"description": "",
 			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
 			"steps": []
