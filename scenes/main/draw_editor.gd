@@ -1,6 +1,8 @@
 class_name DrawEditor
 extends HSplitContainer
 
+const PREVIEW_TIMEOUT: float = 5.0
+
 enum Tool {
 	PENCIL,
 	ERASE,
@@ -19,11 +21,17 @@ enum BrushShape {
 var tool := Tool.PENCIL
 var brush_shape := BrushShape.SQUARE
 var file: FileInstance
+
 var brush_texture: ImageTexture
+var small_brush: ImageTexture
 
 var is_drawing: bool = false
+var is_hovering: bool = false
 var last_point: Vector2i
 var last_hover_point: Vector2i
+
+var preview_active: bool = false
+var preview_elapsed: float = 0.0
 
 @onready var color_picker: ColorPickerButton = %ColorPicker
 
@@ -57,6 +65,19 @@ func _ready() -> void:
 	update_tool_options()
 
 	_connect_signals()
+	_create_small_brush()
+
+
+func _process(delta: float) -> void:
+	if not preview_active:
+		return
+
+	preview_elapsed += delta
+
+	if preview_elapsed > PREVIEW_TIMEOUT:
+		draw_canvas.clear_preview()
+		preview_elapsed = 0.0
+		preview_active = false
 
 
 func update_editor(new_file: FileInstance) -> void:
@@ -125,6 +146,8 @@ func update_brush_texture() -> void:
 
 
 func event_pressed(color: Color, point: Vector2i) -> void:
+	_stop_preview()
+
 	match tool:
 		Tool.PENCIL, Tool.ERASE:
 			last_point = point
@@ -138,11 +161,29 @@ func event_pressed(color: Color, point: Vector2i) -> void:
 
 
 func event_released(color: Color, point: Vector2i) -> void:
-	print("released")
+	_stop_preview()
 
 
 func event_hover_motion(color: Color, point: Vector2i) -> void:
-	print("hovered")
+	if is_drawing:
+		return
+
+	preview_active = true
+	preview_elapsed = 0.0
+
+	match tool:
+		Tool.EYEDROPPER, Tool.FILL, Tool.SELECT:
+			draw_canvas.preview_stamp(
+				small_brush,
+				color if not tool == Tool.EYEDROPPER else Color.TRANSPARENT,
+				point,
+			)
+		_:
+			draw_canvas.preview_stamp(
+				brush_texture,
+				color if not tool == Tool.ERASE else Color.TRANSPARENT,
+				point,
+			)
 
 
 func event_pressed_motion(color: Color, point: Vector2i) -> void:
@@ -182,6 +223,21 @@ func _connect_signals() -> void:
 	brush_size_box.value_changed.connect(update_brush_texture.unbind(1))
 
 
+func _create_small_brush() -> void:
+	var image := Image.create_empty(1, 1, false, Image.FORMAT_RGBA8)
+	image.fill(Color.WHITE)
+
+	small_brush = ImageTexture.create_from_image(image)
+
+
+func _stop_preview() -> void:
+	if not preview_active:
+		return
+
+	draw_canvas.clear_preview()
+	preview_active = false
+
+
 func _get_canvas_mouse_pos() -> Vector2i:
 	return Vector2i(draw_canvas.get_local_mouse_position())
 
@@ -213,8 +269,11 @@ func _on_canvas_gui_input(event: InputEvent) -> void:
 			return
 
 		last_hover_point = point
+		is_hovering = true
 
 		if is_drawing:
 			event_pressed_motion(color, point)
 		else:
 			event_hover_motion(color, point)
+	else:
+		is_hovering = false

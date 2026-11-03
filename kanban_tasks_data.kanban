@@ -17,13 +17,15 @@
 				"20e4a1e8-e7f9-4387-a5ac-8885c94bafab",
 				"b85560bd-518f-4a1c-836c-516d4c3ae090",
 				"9628b620-a810-4595-a33c-0c62114a73c2",
-				"a436ca15-6f7e-488d-aa63-30e08d301515",
 				"ed72594b-ac7c-4201-8b80-cf3d284923c5",
 				"d9ee8289-1412-4e4d-b1dd-2ae23e281d84",
 				"e4569c0a-f52b-4b71-827e-45f005f2bd17",
 				"6d74fe26-2f62-4fcd-aacd-19c847c4b642",
 				"151a46e4-00ef-4de2-b49b-c01f86d73800",
-				"a5ac7441-b2e0-4430-ac02-a1640cdc1db8"
+				"a5ac7441-b2e0-4430-ac02-a1640cdc1db8",
+				"fb1b1ff2-71a3-4a83-b436-3318614cce8f",
+				"1df20979-ef5f-40ba-88f4-872ab3fa7203",
+				"d946d18a-509e-4428-8bbe-6a42188d29be"
 			]
 		},
 		{
@@ -35,6 +37,7 @@
 			"uuid": "5aa41546-6933-4bc8-9e92-6dc0b3a92598",
 			"title": "Done",
 			"tasks": [
+				"a436ca15-6f7e-488d-aa63-30e08d301515",
 				"32e3f608-14e4-4ad8-adec-ee19838336fe",
 				"0df511df-e9a6-4a72-ad43-f44640f4bcf2",
 				"b2b85352-b1d6-48be-8218-57017b12cb1c",
@@ -222,6 +225,27 @@
 		{
 			"uuid": "32e3f608-14e4-4ad8-adec-ee19838336fe",
 			"title": "Rework draw handling",
+			"description": "",
+			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
+			"steps": []
+		},
+		{
+			"uuid": "fb1b1ff2-71a3-4a83-b436-3318614cce8f",
+			"title": "Fix eraser always being square",
+			"description": "",
+			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
+			"steps": []
+		},
+		{
+			"uuid": "1df20979-ef5f-40ba-88f4-872ab3fa7203",
+			"title": "Change brush size with slider",
+			"description": "",
+			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
+			"steps": []
+		},
+		{
+			"uuid": "d946d18a-509e-4428-8bbe-6a42188d29be",
+			"title": "Add center canvas button",
 			"description": "",
 			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
 			"steps": []

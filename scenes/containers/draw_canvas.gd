@@ -61,11 +61,15 @@ func preview_stamp(brush: Texture2D, color: Color, point: Vector2i) -> void:
 
 	var current_color: Color = color if not color.a == 0.0 else Color(1.0, 0.93, 0.931, 0.392)
 
+	clear_preview()
+	preview_texture.blit_rect(rect, brush, current_color)
+
+
+func clear_preview() -> void:
 	var width: int = preview_texture.get_width()
 	var height: int = preview_texture.get_height()
 
-	preview_texture.setup(width, height, DrawableTexture2D.DRAWABLE_FORMAT_RGBA8, current_color)
-	preview_texture.blit_rect(rect, brush, current_color)
+	preview_texture.setup(width, height, DrawableTexture2D.DRAWABLE_FORMAT_RGBA8, Color.TRANSPARENT)
 
 
 func refresh_layers(file: FileInstance) -> void:
