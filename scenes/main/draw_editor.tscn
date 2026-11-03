@@ -153,7 +153,7 @@ layout_mode = 2
 size_flags_horizontal = 10
 theme_type_variation = &"h_box_inner"
 
-[node name="Draw" type="Button" parent="CanvasPanel/CanvasVBox/ToolsHBox/Tools" unique_id=117552682]
+[node name="Pencil" type="Button" parent="CanvasPanel/CanvasVBox/ToolsHBox/Tools" unique_id=117552682]
 unique_name_in_owner = true
 layout_mode = 2
 toggle_mode = true

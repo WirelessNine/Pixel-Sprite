@@ -2,7 +2,7 @@ class_name DrawEditor
 extends HSplitContainer
 
 enum Tool {
-	DRAW,
+	PENCIL,
 	ERASE,
 	EYEDROPPER,
 	FILL,
@@ -16,13 +16,14 @@ enum BrushShape {
 	CIRCLE,
 }
 
-var tool := Tool.DRAW
+var tool := Tool.PENCIL
 var brush_shape := BrushShape.SQUARE
 var file: FileInstance
 var brush_texture: ImageTexture
 
 var is_drawing: bool = false
 var last_point: Vector2i
+var last_hover_point: Vector2i
 
 @onready var color_picker: ColorPickerButton = %ColorPicker
 
@@ -41,7 +42,7 @@ var last_point: Vector2i
 
 @onready var tools_box: HBoxContainer = $CanvasPanel/CanvasVBox/ToolsHBox/Tools
 
-@onready var draw_tool: Button = %Draw
+@onready var pencil_tool: Button = %Pencil
 @onready var erase_tool: Button = %Erase
 @onready var eyedropper_tool: Button = %Eyedropper
 @onready var fill_tool: Button = %Fill
@@ -82,7 +83,7 @@ func update_tool_options() -> void:
 	mirror_options_box.hide()
 
 	match tool:
-		Tool.DRAW, Tool.ERASE:
+		Tool.PENCIL, Tool.ERASE:
 			brush_options_box.show()
 			pixel_perfect_button.show()
 			mirror_options_box.show()
@@ -123,48 +124,43 @@ func update_brush_texture() -> void:
 			brush_texture = ImageTexture.create_from_image(image)
 
 
-func draw_input(event: InputEventMouse, erase: bool) -> void:
-	var color: Color = color_picker.color if not erase else Color.TRANSPARENT
+func event_pressed(color: Color, point: Vector2i) -> void:
+	match tool:
+		Tool.PENCIL, Tool.ERASE:
+			last_point = point
 
-	if event is InputEventMouseButton:
-		if not event.button_index == MOUSE_BUTTON_LEFT:
-			return
+			draw_canvas.paint_stamp(
+				brush_texture,
+				file.current_layer.texture,
+				color if not tool == Tool.ERASE else Color.TRANSPARENT,
+				last_point,
+			)
 
-		if not event.is_pressed():
-			is_drawing = false
-			return
 
-		is_drawing = true
+func event_released(color: Color, point: Vector2i) -> void:
+	print("released")
 
-		if brush_texture == null:
-			update_brush_texture()
 
-		last_point = _get_canvas_mouse_pos()
+func event_hover_motion(color: Color, point: Vector2i) -> void:
+	print("hovered")
 
-		draw_canvas.paint_line(
-			brush_texture,
-			file.current_layer.texture,
-			color,
-			last_point,
-			last_point,
-		)
 
-	if event is InputEventMouseMotion and is_drawing:
-		var current_point: Vector2i = _get_canvas_mouse_pos()
+func event_pressed_motion(color: Color, point: Vector2i) -> void:
+	match tool:
+		Tool.PENCIL, Tool.ERASE:
+			draw_canvas.paint_stroke(
+				brush_texture,
+				file.current_layer.texture,
+				color,
+				last_point,
+				point,
+			)
 
-		draw_canvas.paint_line(
-			brush_texture,
-			file.current_layer.texture,
-			color,
-			last_point,
-			current_point,
-		)
-
-		last_point = current_point
+			last_point = point
 
 
 func _connect_signals() -> void:
-	draw_tool.pressed.connect(set_tool.bind(Tool.DRAW))
+	pencil_tool.pressed.connect(set_tool.bind(Tool.PENCIL))
 	erase_tool.pressed.connect(set_tool.bind(Tool.ERASE))
 	eyedropper_tool.pressed.connect(set_tool.bind(Tool.EYEDROPPER))
 	fill_tool.pressed.connect(set_tool.bind(Tool.FILL))
@@ -194,9 +190,31 @@ func _on_canvas_gui_input(event: InputEvent) -> void:
 	if event.device < 1:
 		return
 
-	match tool:
-		Tool.DRAW, Tool.ERASE:
-			if not event is InputEventMouse:
-				return
+	if brush_texture == null:
+		update_brush_texture()
 
-			draw_input(event, tool == Tool.ERASE)
+	var color: Color = color_picker.color
+	var point: Vector2i = _get_canvas_mouse_pos()
+
+	if event is InputEventMouseButton:
+		if not event.button_index == MOUSE_BUTTON_LEFT:
+			return
+
+		if event.is_pressed():
+			is_drawing = true
+			event_pressed(color, point)
+
+		elif event.is_released():
+			is_drawing = false
+			event_released(color, point)
+
+	if event is InputEventMouseMotion:
+		if point == last_hover_point:
+			return
+
+		last_hover_point = point
+
+		if is_drawing:
+			event_pressed_motion(color, point)
+		else:
+			event_hover_motion(color, point)

@@ -3,6 +3,7 @@ extends ColorRect
 const ZOOM_FACTOR: float = 1.12
 const MIN_ZOOM: float = 0.1
 const MAX_ZOOM: float = 20.0
+const DOUBLE_CLICK_TIMEOUT: float = 350.0
 
 var zoom: float = 1.0
 
@@ -10,6 +11,8 @@ var pan := Vector2.ZERO
 var dragging: bool = false
 var drag_start := Vector2.ZERO
 var pan_start := Vector2.ZERO
+
+var has_screen_touched: bool = false
 
 @onready var canvas: DrawCanvas = %DrawCanvas
 
@@ -27,25 +30,26 @@ func _gui_input(event: InputEvent) -> void:
 
 
 func _mobile_input(event: InputEvent) -> void:
-	if event is InputEventMagnifyGesture:
+	if event is InputEventMouse:
+		has_screen_touched = false
+	elif event is InputEventScreenTouch:
+		has_screen_touched = true
+
+	if event is InputEventMagnifyGesture and has_screen_touched:
 		_zoom_at(event.position, event.factor)
-		accept_event()
 
 	if event is InputEventPanGesture:
 		pan -= event.delta
 		_update_texture()
-		accept_event()
 
 
 func _desktop_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_WHEEL_UP:
 			_zoom_at(event.position, ZOOM_FACTOR)
-			accept_event()
 
 		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
 			_zoom_at(event.position, 1.0 / ZOOM_FACTOR)
-			accept_event()
 
 		elif event.button_index == MOUSE_BUTTON_MIDDLE:
 			if event.pressed:
@@ -55,15 +59,12 @@ func _desktop_input(event: InputEvent) -> void:
 			else:
 				dragging = false
 
-			accept_event()
-
 	if event is InputEventMouseMotion:
 		if not dragging:
 			return
 
 		pan = pan_start + (event.position - drag_start)
 		_update_texture()
-		accept_event()
 
 
 func _update_texture() -> void:

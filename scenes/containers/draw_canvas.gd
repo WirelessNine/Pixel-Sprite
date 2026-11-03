@@ -1,21 +1,24 @@
 class_name DrawCanvas
 extends TextureRect
 
-const ERASE_MATERIAL: BlitMaterial = preload("uid://dy8yhdx5od8lf")
-
 var layers: Array[TextureRect]
 
+var erase_blit: BlitMaterial
 var preview_texture: DrawableTexture2D
 
 @onready var preview_layer: TextureRect = $PreviewLayer
 
 
 func _ready() -> void:
+	erase_blit = BlitMaterial.new()
+	erase_blit.blend_mode = BlitMaterial.BLEND_MODE_DISABLED
+
 	preview_texture = DrawableTexture2D.new()
 	preview_layer.texture = preview_texture
 
 
-func paint_line(
+##Paints a continuous stroke, like a pencil or eraser.
+func paint_stroke(
 	brush: Texture2D,
 	layer_texture: DrawableTexture2D,
 	color: Color,
@@ -25,7 +28,7 @@ func paint_line(
 	var distance: float = from.distance_to(to)
 
 	if distance < 0.1:
-		paint_stamp(brush, layer_texture, color, to)
+		paint_stamp(brush, layer_texture, color, from)
 		return
 
 	var steps: int = ceili(distance)
@@ -46,9 +49,23 @@ func paint_stamp(
 	var rect_center: Vector2i = point - Vector2i(rect_size / 2.0)
 	var rect := Rect2i(rect_center, rect_size)
 
-	var shader: BlitMaterial = ERASE_MATERIAL if color == Color.TRANSPARENT else null
+	var blit: BlitMaterial = erase_blit if color.a == 0.0 else null
 
-	layer_texture.blit_rect(rect, brush, color, 0, shader)
+	layer_texture.blit_rect(rect, brush, color, 0, blit)
+
+
+func preview_stamp(brush: Texture2D, color: Color, point: Vector2i) -> void:
+	var rect_size: Vector2i = brush.get_size()
+	var rect_center: Vector2i = point - Vector2i(rect_size / 2.0)
+	var rect := Rect2i(rect_center, rect_size)
+
+	var current_color: Color = color if not color.a == 0.0 else Color(1.0, 0.93, 0.931, 0.392)
+
+	var width: int = preview_texture.get_width()
+	var height: int = preview_texture.get_height()
+
+	preview_texture.setup(width, height, DrawableTexture2D.DRAWABLE_FORMAT_RGBA8, current_color)
+	preview_texture.blit_rect(rect, brush, current_color)
 
 
 func refresh_layers(file: FileInstance) -> void:
@@ -84,6 +101,7 @@ func is_cursor_inside(point: Vector2) -> bool:
 func _create_layer(layer_texture: DrawableTexture2D) -> TextureRect:
 	var rect := TextureRect.new()
 	rect.texture = layer_texture
+	rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 	layers.append(rect)
 	add_child(rect)
