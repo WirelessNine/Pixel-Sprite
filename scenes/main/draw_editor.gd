@@ -161,6 +161,15 @@ func event_pressed(color: Color, point: Vector2i) -> void:
 				last_point,
 			)
 
+		Tool.EYEDROPPER:
+			var image: Image = file.current_layer.texture.get_image()
+			var pixel_color: Color = image.get_pixelv(point)
+
+			color_picker.color = pixel_color
+
+			pencil_tool.button_pressed = true
+			pencil_tool.pressed.emit()
+
 
 func event_released(color: Color, point: Vector2i) -> void:
 	_stop_preview()
