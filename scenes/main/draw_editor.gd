@@ -9,7 +9,8 @@ enum Tool {
 	EYEDROPPER,
 	FILL,
 	LINE,
-	SHAPE,
+	RECTANGLE,
+	CIRCLE,
 	SELECT,
 }
 
@@ -54,7 +55,8 @@ var preview_elapsed: float = 0.0
 @onready var eyedropper_tool: Button = %Eyedropper
 @onready var fill_tool: Button = %Fill
 @onready var line_tool: Button = %Line
-@onready var shape_tool: Button = %Shape
+@onready var rectangle_tool: Button = %Rectangle
+@onready var circle_tool: Button = %Circle
 @onready var select_tool: Button = %Select
 
 @onready var draw_canvas: DrawCanvas = %DrawCanvas
@@ -99,11 +101,11 @@ func _unhandled_input(event: InputEvent) -> void:
 		line_tool.button_pressed = true
 		line_tool.pressed.emit()
 	elif event.is_action_pressed(&"rectangle"):
-		shape_tool.button_pressed = true
-		shape_tool.pressed.emit()
+		rectangle_tool.button_pressed = true
+		rectangle_tool.pressed.emit()
 	elif event.is_action_pressed(&"circle"):
-		shape_tool.button_pressed = true
-		shape_tool.pressed.emit()
+		circle_tool.button_pressed = true
+		circle_tool.pressed.emit()
 	elif event.is_action_pressed(&"select"):
 		select_tool.button_pressed = true
 		select_tool.pressed.emit()
@@ -143,7 +145,7 @@ func update_tool_options() -> void:
 		Tool.FILL:
 			continuous_button.show()
 			mirror_options_box.show()
-		Tool.LINE, Tool.SHAPE:
+		Tool.LINE, Tool.RECTANGLE, Tool.CIRCLE:
 			brush_type_option.show()
 			brush_size_slider.show()
 			mirror_options_box.show()
@@ -248,7 +250,8 @@ func _connect_signals() -> void:
 	eyedropper_tool.pressed.connect(set_tool.bind(Tool.EYEDROPPER))
 	fill_tool.pressed.connect(set_tool.bind(Tool.FILL))
 	line_tool.pressed.connect(set_tool.bind(Tool.LINE))
-	shape_tool.pressed.connect(set_tool.bind(Tool.SHAPE))
+	rectangle_tool.pressed.connect(set_tool.bind(Tool.RECTANGLE))
+	circle_tool.pressed.connect(set_tool.bind(Tool.CIRCLE))
 	select_tool.pressed.connect(set_tool.bind(Tool.SELECT))
 
 	brush_type_option.item_selected.connect(

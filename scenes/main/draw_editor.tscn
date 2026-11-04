@@ -14,9 +14,10 @@
 [ext_resource type="Texture2D" uid="uid://bn11fy5oiw7qi" path="res://resources/visual/icons/eyedropper.tres" id="3_tkv7h"]
 [ext_resource type="Texture2D" uid="uid://be5gicj0650f4" path="res://resources/visual/icons/fill.tres" id="4_jo6rw"]
 [ext_resource type="Texture2D" uid="uid://b76wti6pcmn0g" path="res://resources/visual/icons/line.tres" id="5_03ugf"]
-[ext_resource type="Texture2D" uid="uid://dgnppp1b1s1g8" path="res://resources/visual/icons/shape.tres" id="6_oefrb"]
+[ext_resource type="Texture2D" uid="uid://dgnppp1b1s1g8" path="res://resources/visual/icons/rectangle.tres" id="6_oefrb"]
 [ext_resource type="Texture2D" uid="uid://cku7mrs5qp0hc" path="res://resources/visual/icons/select.tres" id="7_agl5e"]
 [ext_resource type="PackedScene" uid="uid://cks5ukck18gdp" path="res://scenes/containers/draw_canvas.tscn" id="16_bwlaj"]
+[ext_resource type="Texture2D" uid="uid://c82a1s8u4bhqj" path="res://resources/visual/icons/circle.tres" id="16_po05y"]
 [ext_resource type="Script" uid="uid://bwntk4mvvpukq" path="res://scenes/main/canvas_view.gd" id="17_3k5hd"]
 
 [node name="DrawEditor" type="HSplitContainer" unique_id=76540871]
@@ -179,13 +180,21 @@ action_mode = 0
 button_group = ExtResource("1_k8h6b")
 icon = ExtResource("5_03ugf")
 
-[node name="Shape" type="Button" parent="CanvasPanel/CanvasVBox/ToolsHBox/Tools" unique_id=1922452845]
+[node name="Rectangle" type="Button" parent="CanvasPanel/CanvasVBox/ToolsHBox/Tools" unique_id=1922452845]
 unique_name_in_owner = true
 layout_mode = 2
 toggle_mode = true
 action_mode = 0
 button_group = ExtResource("1_k8h6b")
 icon = ExtResource("6_oefrb")
+
+[node name="Circle" type="Button" parent="CanvasPanel/CanvasVBox/ToolsHBox/Tools" unique_id=2094667510]
+unique_name_in_owner = true
+layout_mode = 2
+toggle_mode = true
+action_mode = 0
+button_group = ExtResource("1_k8h6b")
+icon = ExtResource("16_po05y")
 
 [node name="Select" type="Button" parent="CanvasPanel/CanvasVBox/ToolsHBox/Tools" unique_id=252266340]
 unique_name_in_owner = true

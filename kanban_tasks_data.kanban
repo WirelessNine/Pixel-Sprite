@@ -24,7 +24,7 @@
 				"a5ac7441-b2e0-4430-ac02-a1640cdc1db8",
 				"fb1b1ff2-71a3-4a83-b436-3318614cce8f",
 				"d946d18a-509e-4428-8bbe-6a42188d29be",
-				"7c80c24b-4d4a-4027-b94b-d4615ba057ac"
+				"e67e8f18-6e45-4269-8910-58ed82bd4f45"
 			]
 		},
 		{
@@ -36,6 +36,7 @@
 			"uuid": "5aa41546-6933-4bc8-9e92-6dc0b3a92598",
 			"title": "Done",
 			"tasks": [
+				"7c80c24b-4d4a-4027-b94b-d4615ba057ac",
 				"793138d1-b0c7-4633-8cdb-e312d93b30e9",
 				"761f6428-3cae-4117-b8f9-4e2538e31d89",
 				"d9ee8289-1412-4e4d-b1dd-2ae23e281d84",
@@ -115,7 +116,7 @@
 		},
 		{
 			"uuid": "b85560bd-518f-4a1c-836c-516d4c3ae090",
-			"title": "Add color pallete and color picker",
+			"title": "Add color pallete",
 			"description": "",
 			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
 			"steps": []
@@ -136,7 +137,7 @@
 		},
 		{
 			"uuid": "ed72594b-ac7c-4201-8b80-cf3d284923c5",
-			"title": "Add marquee tool",
+			"title": "Add select tool",
 			"description": "",
 			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
 			"steps": []
@@ -270,6 +271,13 @@
 		{
 			"uuid": "793138d1-b0c7-4633-8cdb-e312d93b30e9",
 			"title": "Add desktop shortcuts",
+			"description": "",
+			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
+			"steps": []
+		},
+		{
+			"uuid": "e67e8f18-6e45-4269-8910-58ed82bd4f45",
+			"title": "Add better color picker menu",
 			"description": "",
 			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
 			"steps": []
