@@ -37,9 +37,8 @@ var preview_elapsed: float = 0.0
 
 @onready var collapse_button: Button = %Collapse
 
-@onready var brush_options_box: HBoxContainer = %BrushOptions
 @onready var brush_type_option: PixelOptionButton = %BrushType
-@onready var brush_size_box: SpinBox = %BrushSize
+@onready var brush_size_slider: VSlider = %BrushSize
 
 @onready var pixel_perfect_button: Button = %PixelPerfect
 @onready var continuous_button: Button = %Continuous
@@ -98,28 +97,31 @@ func set_tool(new_tool: Tool) -> void:
 
 
 func update_tool_options() -> void:
-	brush_options_box.hide()
+	brush_type_option.hide()
+	brush_size_slider.hide()
 	pixel_perfect_button.hide()
 	continuous_button.hide()
 	mirror_options_box.hide()
 
 	match tool:
 		Tool.PENCIL, Tool.ERASE:
-			brush_options_box.show()
+			brush_type_option.show()
+			brush_size_slider.show()
 			pixel_perfect_button.show()
 			mirror_options_box.show()
 		Tool.FILL:
 			continuous_button.show()
 			mirror_options_box.show()
 		Tool.LINE, Tool.SHAPE:
-			brush_options_box.show()
+			brush_type_option.show()
+			brush_size_slider.show()
 			mirror_options_box.show()
 		Tool.SELECT:
 			mirror_options_box.show()
 
 
 func update_brush_texture() -> void:
-	var brush_size := int(brush_size_box.value)
+	var brush_size := int(brush_size_slider.value)
 
 	match brush_shape:
 		BrushShape.SQUARE:
@@ -220,7 +222,7 @@ func _connect_signals() -> void:
 			update_brush_texture(),
 	)
 
-	brush_size_box.value_changed.connect(update_brush_texture.unbind(1))
+	brush_size_slider.value_changed.connect(update_brush_texture.unbind(1))
 
 
 func _create_small_brush() -> void:
