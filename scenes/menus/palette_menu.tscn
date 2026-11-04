@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://xwmnptxsmjoc"]
+
+[ext_resource type="Script" uid="uid://ct1rdv2nbovu1" path="res://scenes/menus/palette_menu.gd" id="1_a7qrc"]
+[ext_resource type="Resource" uid="uid://bn5yymmr2r6ut" path="res://resources/engine/presets/menu.tres" id="2_i1o87"]
+
+[node name="PaletteMenu" type="PanelContainer" unique_id=176811701]
+offset_right = 50.0
+offset_bottom = 52.0
+script = ExtResource("1_a7qrc")
+preset = ExtResource("2_i1o87")
+move_background = true
+start_closed = true
+metadata/_custom_type_script = "uid://rxwty6cd03ab"
+
+[node name="PalettePanel" type="PanelContainer" parent="." unique_id=2062160714]
+layout_mode = 2
+theme_type_variation = &"panel_group"
+
+[node name="PaletteVBox" type="VBoxContainer" parent="PalettePanel" unique_id=1319731507]
+layout_mode = 2
+theme_type_variation = &"v_box_inner"
+
+[node name="List" type="ItemList" parent="PalettePanel/PaletteVBox" unique_id=362932483]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+auto_width = true
+auto_height = true
+
+[node name="Cancel" type="Button" parent="PalettePanel/PaletteVBox" unique_id=402648051]
+layout_mode = 2
+text = "Cancel"
+
+[connection signal="item_selected" from="PalettePanel/PaletteVBox/List" to="." method="_on_list_item_selected"]
+[connection signal="pressed" from="PalettePanel/PaletteVBox/Cancel" to="." method="_on_cancel_pressed"]

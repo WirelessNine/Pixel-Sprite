@@ -126,7 +126,7 @@ func update_editor(new_file: FileInstance) -> void:
 func set_tool(new_tool: Tool) -> void:
 	tool = new_tool
 	update_tool_options()
-	event_hover_motion(color_picker.color, _get_canvas_mouse_pos())
+	_refresh_preview()
 
 
 func update_tool_options() -> void:
@@ -205,7 +205,7 @@ func event_pressed(color: Color, point: Vector2i) -> void:
 
 
 func event_released(color: Color, point: Vector2i) -> void:
-	_stop_preview()
+	_refresh_preview()
 
 
 func event_hover_motion(color: Color, point: Vector2i) -> void:
@@ -281,6 +281,10 @@ func _stop_preview() -> void:
 
 	draw_canvas.clear_preview()
 	preview_active = false
+
+
+func _refresh_preview() -> void:
+	event_hover_motion(color_picker.color, _get_canvas_mouse_pos())
 
 
 func _get_canvas_mouse_pos() -> Vector2i:

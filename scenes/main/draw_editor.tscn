@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bnehwsao2tk01" path="res://resources/visual/icons/palletes.tres" id="1_tkv7h"]
 [ext_resource type="Texture2D" uid="uid://bys1p4ic0yji8" path="res://resources/visual/icons/pixel_perfect.tres" id="2_agl5e"]
 [ext_resource type="Script" uid="uid://ct4rfr3koty3v" path="res://classes/nodes/pixel_option_button.gd" id="2_anbg2"]
+[ext_resource type="Script" uid="uid://cfdda3oxeliwr" path="res://scenes/main/palette_inspector.gd" id="2_daxrj"]
 [ext_resource type="Texture2D" uid="uid://cgqils3172v31" path="res://resources/visual/icons/mirror_h.tres" id="2_jo6rw"]
 [ext_resource type="Texture2D" uid="uid://stca172u07gy" path="res://resources/visual/icons/erase.tres" id="2_k8h6b"]
 [ext_resource type="Texture2D" uid="uid://dpxhpbu8fdhoa" path="res://resources/visual/icons/collapse.tres" id="2_m3me3"]
@@ -40,27 +41,38 @@ custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 theme_type_variation = &"v_box_inner"
 
-[node name="Pallete" type="PanelContainer" parent="InspectorPanel/InspectorVBox" unique_id=1400635171]
+[node name="Palette" type="PanelContainer" parent="InspectorPanel/InspectorVBox" unique_id=1400635171]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 size_flags_vertical = 3
 theme_type_variation = &"panel_inset"
+script = ExtResource("2_daxrj")
 
-[node name="HFlowContainer" type="HFlowContainer" parent="InspectorPanel/InspectorVBox/Pallete" unique_id=903588244]
+[node name="PaletteScroll" type="ScrollContainer" parent="InspectorPanel/InspectorVBox/Palette" unique_id=700883086]
 layout_mode = 2
+scroll_hint_mode = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="InspectorPanel/InspectorVBox" unique_id=2087877563]
+[node name="PaletteGrid" type="GridContainer" parent="InspectorPanel/InspectorVBox/Palette/PaletteScroll" unique_id=12349170]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_type_variation = &"grid_inner"
+columns = 5
+
+[node name="ColorHBox" type="HBoxContainer" parent="InspectorPanel/InspectorVBox" unique_id=2087877563]
 layout_mode = 2
 theme_type_variation = &"h_box_inner"
 
-[node name="ColorPicker" type="ColorPickerButton" parent="InspectorPanel/InspectorVBox/HBoxContainer" unique_id=1133600285]
+[node name="ColorPicker" type="ColorPickerButton" parent="InspectorPanel/InspectorVBox/ColorHBox" unique_id=1133600285]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 15.07)
 layout_mode = 2
 size_flags_horizontal = 3
 edit_intensity = false
 
-[node name="Palettes" type="Button" parent="InspectorPanel/InspectorVBox/HBoxContainer" unique_id=1492951698]
+[node name="Palettes" type="Button" parent="InspectorPanel/InspectorVBox/ColorHBox" unique_id=1492951698]
+unique_name_in_owner = true
 layout_mode = 2
 icon = ExtResource("1_tkv7h")
 

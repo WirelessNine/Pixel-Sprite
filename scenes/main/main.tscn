@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c0nndytlfkolw" path="res://scenes/main/home_screen.tscn" id="2_k2fmo"]
 [ext_resource type="Script" uid="uid://ck3qlisigikex" path="res://scenes/main/menu_bar/file_menu.gd" id="2_l3cfh"]
 [ext_resource type="PackedScene" uid="uid://xqb3lngeuu63" path="res://scenes/windows/create_file.tscn" id="5_6q06x"]
+[ext_resource type="PackedScene" uid="uid://xwmnptxsmjoc" path="res://scenes/menus/palette_menu.tscn" id="6_ow5a4"]
 
 [node name="Main" type="PanelContainer" unique_id=122593638]
 anchors_preset = 15
@@ -55,7 +56,6 @@ oversampling_override = 1.0
 
 [node name="Tabs" type="TabBar" parent="MainVBox/MenuHBox" unique_id=2113150327]
 unique_name_in_owner = true
-z_index = 1
 layout_mode = 2
 size_flags_horizontal = 3
 offset_transform_enabled = true
@@ -65,6 +65,7 @@ tab_close_display_policy = 1
 drag_to_rearrange_enabled = true
 
 [node name="ScreensPanel" type="PanelContainer" parent="MainVBox" unique_id=1592119909]
+show_behind_parent = true
 layout_mode = 2
 size_flags_vertical = 3
 theme_type_variation = &"panel_section"
@@ -103,3 +104,17 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+
+[node name="PaletteMenu" parent="Dialogs" unique_id=176811701 instance=ExtResource("6_ow5a4")]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -26.0
+offset_right = 25.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
