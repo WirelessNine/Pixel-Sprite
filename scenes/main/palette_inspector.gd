@@ -63,11 +63,7 @@ func _update_button(button: ColorButton, color: Color) -> void:
 
 
 func _on_color_pressed(button: ColorButton) -> void:
-	color_picker.set_block_signals(true)
-
 	color_picker.color = button.self_modulate
-
-	color_picker.set_block_signals(false)
 
 
 func _on_color_picker_changed(new_color: Color) -> void:

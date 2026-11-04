@@ -39,6 +39,25 @@ func paint_stroke(
 		paint_stamp(brush, layer_texture, color, lerped_point)
 
 
+func paint_line(
+	brush: Texture2D,
+	layer_texture: DrawableTexture2D,
+	color: Color,
+	start: Vector2i,
+	end: Vector2i,
+) -> void:
+	var line_points: Array[Vector2i] = Geometry2D.bresenham_line(start, end)
+
+	var rect_size: Vector2i = brush.get_size()
+	var current_color: Color = color if not color.a == 0.0 else Color(1.0, 0.93, 0.931, 0.392)
+
+	for x: Vector2i in line_points:
+		var rect_center: Vector2i = x - Vector2i(rect_size / 2.0)
+		var rect := Rect2i(rect_center, rect_size)
+
+		layer_texture.blit_rect(rect, brush, current_color)
+
+
 func paint_stamp(
 	brush: Texture2D,
 	layer_texture: DrawableTexture2D,
@@ -52,6 +71,12 @@ func paint_stamp(
 	var blit: BlitMaterial = erase_blit if color.a == 0.0 else null
 
 	layer_texture.blit_rect(rect, brush, color, 0, blit)
+
+
+func preview_line(brush: Texture2D, color: Color, start: Vector2i, end: Vector2i) -> void:
+	clear_preview()
+
+	paint_line(brush, preview_texture, color, start, end)
 
 
 func preview_stamp(brush: Texture2D, color: Color, point: Vector2i) -> void:

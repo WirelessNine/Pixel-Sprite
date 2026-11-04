@@ -31,6 +31,8 @@ var is_hovering: bool = false
 var last_point: Vector2i
 var last_hover_point: Vector2i
 
+var shape_point_start: Vector2i
+
 var preview_active: bool = false
 var preview_elapsed: float = 0.0
 
@@ -64,6 +66,7 @@ var preview_elapsed: float = 0.0
 
 func _ready() -> void:
 	update_tool_options()
+	update_brush_texture()
 
 	_connect_signals()
 	_create_small_brush()
@@ -199,13 +202,31 @@ func event_pressed(color: Color, point: Vector2i) -> void:
 			var pixel_color: Color = image.get_pixelv(point)
 
 			color_picker.color = pixel_color
+			color_picker.color_changed.emit(pixel_color)
 
 			pencil_tool.button_pressed = true
 			pencil_tool.pressed.emit()
 
+		Tool.LINE, Tool.RECTANGLE, Tool.CIRCLE:
+			shape_point_start = point
+
+			match tool:
+				Tool.LINE:
+					draw_canvas.preview_line(brush_texture, color, point, point)
+
 
 func event_released(color: Color, point: Vector2i) -> void:
 	_refresh_preview()
+
+	match tool:
+		Tool.LINE:
+			draw_canvas.paint_line(
+				brush_texture,
+				file.current_layer.texture,
+				color,
+				shape_point_start,
+				point,
+			)
 
 
 func event_hover_motion(color: Color, point: Vector2i) -> void:
@@ -229,6 +250,9 @@ func event_hover_motion(color: Color, point: Vector2i) -> void:
 				point,
 			)
 
+		Tool.LINE:
+			draw_canvas.preview_line(brush_texture, color, shape_point_start, point)
+
 
 func event_pressed_motion(color: Color, point: Vector2i) -> void:
 	match tool:
@@ -242,6 +266,9 @@ func event_pressed_motion(color: Color, point: Vector2i) -> void:
 			)
 
 			last_point = point
+
+		Tool.LINE:
+			draw_canvas.preview_line(brush_texture, color, shape_point_start, point)
 
 
 func _connect_signals() -> void:
