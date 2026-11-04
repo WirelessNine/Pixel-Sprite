@@ -79,6 +79,36 @@ func _process(delta: float) -> void:
 		preview_active = false
 
 
+func _unhandled_input(event: InputEvent) -> void:
+	if not visible:
+		return
+
+	if event.is_action_pressed(&"pencil"):
+		pencil_tool.button_pressed = true
+		pencil_tool.pressed.emit()
+	elif event.is_action_pressed(&"eraser"):
+		erase_tool.button_pressed = true
+		erase_tool.pressed.emit()
+	elif event.is_action_pressed(&"eyedropper"):
+		eyedropper_tool.button_pressed = true
+		eyedropper_tool.pressed.emit()
+	elif event.is_action_pressed(&"fill"):
+		fill_tool.button_pressed = true
+		fill_tool.pressed.emit()
+	elif event.is_action_pressed(&"line"):
+		line_tool.button_pressed = true
+		line_tool.pressed.emit()
+	elif event.is_action_pressed(&"rectangle"):
+		shape_tool.button_pressed = true
+		shape_tool.pressed.emit()
+	elif event.is_action_pressed(&"circle"):
+		shape_tool.button_pressed = true
+		shape_tool.pressed.emit()
+	elif event.is_action_pressed(&"select"):
+		select_tool.button_pressed = true
+		select_tool.pressed.emit()
+
+
 func update_editor(new_file: FileInstance) -> void:
 	file = new_file
 
@@ -94,6 +124,7 @@ func update_editor(new_file: FileInstance) -> void:
 func set_tool(new_tool: Tool) -> void:
 	tool = new_tool
 	update_tool_options()
+	event_hover_motion(color_picker.color, _get_canvas_mouse_pos())
 
 
 func update_tool_options() -> void:
