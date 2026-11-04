@@ -203,7 +203,7 @@ func event_pressed_motion(color: Color, point: Vector2i) -> void:
 			draw_canvas.paint_stroke(
 				brush_texture,
 				file.current_layer.texture,
-				color,
+				color if not tool == Tool.ERASE else Color.TRANSPARENT,
 				last_point,
 				point,
 			)
