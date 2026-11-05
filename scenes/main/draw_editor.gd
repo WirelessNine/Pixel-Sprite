@@ -43,13 +43,7 @@ var preview_elapsed: float = 0.0
 @onready var brush_type_option: PixelOptionButton = %BrushType
 @onready var brush_size_slider: VSlider = %BrushSize
 
-@onready var pixel_perfect_button: Button = %PixelPerfect
-@onready var continuous_button: Button = %Continuous
 @onready var filled_button: Button = %Filled
-
-@onready var mirror_options_box: HBoxContainer = %MirrorOptions
-@onready var mirror_h_button: Button = %MirrorH
-@onready var mirror_v_button: Button = %MirrorV
 
 @onready var tools_box: HBoxContainer = $CanvasPanel/CanvasVBox/ToolsHBox/Tools
 
@@ -118,12 +112,6 @@ func _unhandled_input(event: InputEvent) -> void:
 func update_editor(new_file: FileInstance) -> void:
 	file = new_file
 
-	if new_file.mirror_h_enabled:
-		mirror_h_button.button_pressed = true
-
-	if new_file.mirror_v_enabled:
-		mirror_v_button.button_pressed = true
-
 	draw_canvas.refresh_layers(new_file)
 
 
@@ -136,30 +124,18 @@ func set_tool(new_tool: Tool) -> void:
 func update_tool_options() -> void:
 	brush_type_option.hide()
 	brush_size_slider.hide()
-	pixel_perfect_button.hide()
-	continuous_button.hide()
 	filled_button.hide()
-	mirror_options_box.hide()
 
 	match tool:
 		Tool.PENCIL, Tool.ERASE:
 			brush_type_option.show()
 			brush_size_slider.show()
-			pixel_perfect_button.show()
-			mirror_options_box.show()
-		Tool.FILL:
-			continuous_button.show()
-			mirror_options_box.show()
 		Tool.LINE, Tool.RECTANGLE, Tool.CIRCLE:
 			brush_type_option.show()
 			brush_size_slider.show()
-			mirror_options_box.show()
 
 			if not tool == Tool.LINE:
 				filled_button.show()
-
-		Tool.SELECT:
-			mirror_options_box.show()
 
 
 func update_brush_texture() -> void:

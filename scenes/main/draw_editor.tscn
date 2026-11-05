@@ -78,11 +78,6 @@ unique_name_in_owner = true
 layout_mode = 2
 icon = ExtResource("1_tkv7h")
 
-[node name="Layers" type="PanelContainer" parent="InspectorPanel/InspectorVBox" unique_id=1866848093]
-layout_mode = 2
-size_flags_vertical = 3
-theme_type_variation = &"panel_inset"
-
 [node name="CanvasPanel" type="PanelContainer" parent="." unique_id=1188823666]
 layout_mode = 2
 theme_type_variation = &"panel_group"
@@ -97,11 +92,13 @@ theme_type_variation = &"h_box_inner"
 
 [node name="Collapse" type="Button" parent="CanvasPanel/CanvasVBox/ToolsHBox" unique_id=944520908]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 toggle_mode = true
 icon = ExtResource("2_m3me3")
 
 [node name="VSeparator" type="VSeparator" parent="CanvasPanel/CanvasVBox/ToolsHBox" unique_id=808259911]
+visible = false
 layout_mode = 2
 
 [node name="BrushType" type="OptionButton" parent="CanvasPanel/CanvasVBox/ToolsHBox" unique_id=1935361553]
@@ -119,6 +116,7 @@ metadata/_custom_type_script = "uid://ct4rfr3koty3v"
 
 [node name="PixelPerfect" type="Button" parent="CanvasPanel/CanvasVBox/ToolsHBox" unique_id=817469909]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 toggle_mode = true
 action_mode = 0
@@ -126,6 +124,7 @@ icon = ExtResource("2_agl5e")
 
 [node name="Continuous" type="Button" parent="CanvasPanel/CanvasVBox/ToolsHBox" unique_id=938685418]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 toggle_mode = true
 action_mode = 0
@@ -140,6 +139,7 @@ icon = ExtResource("8_daxrj")
 
 [node name="MirrorOptions" type="HBoxContainer" parent="CanvasPanel/CanvasVBox/ToolsHBox" unique_id=765071271]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 theme_type_variation = &"h_box_inner"
 
@@ -187,6 +187,7 @@ icon = ExtResource("3_tkv7h")
 
 [node name="Fill" type="Button" parent="CanvasPanel/CanvasVBox/ToolsHBox/Tools" unique_id=297255835]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 toggle_mode = true
 action_mode = 0
@@ -219,6 +220,7 @@ icon = ExtResource("16_po05y")
 
 [node name="Select" type="Button" parent="CanvasPanel/CanvasVBox/ToolsHBox/Tools" unique_id=252266340]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 toggle_mode = true
 action_mode = 0

@@ -33,6 +33,7 @@
 			"uuid": "5aa41546-6933-4bc8-9e92-6dc0b3a92598",
 			"title": "Done",
 			"tasks": [
+				"a2dff28e-1ea0-4218-8b94-02010f5612c1",
 				"c42bcfba-8189-43c8-8ae8-4bee5fa48447",
 				"432a12bf-46d1-4448-88a5-4d552b963df6",
 				"d946d18a-509e-4428-8bbe-6a42188d29be",
@@ -302,6 +303,13 @@
 		{
 			"uuid": "60157e85-4790-4021-8fc5-781328b574ba",
 			"title": "Add stylus mode button",
+			"description": "",
+			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
+			"steps": []
+		},
+		{
+			"uuid": "a2dff28e-1ea0-4218-8b94-02010f5612c1",
+			"title": "Remove complicated features",
 			"description": "",
 			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
 			"steps": []

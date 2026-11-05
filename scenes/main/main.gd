@@ -5,11 +5,7 @@ const UNNAMED_TITLE: String = "Unnamed %01d"
 
 @onready var menu_bar: MenuBar = %MenuBar
 
-@onready var file_menu: PopupMenu = %File
-@onready var edit_menu: PopupMenu = %Edit
-@onready var sprite_menu: PopupMenu = %Sprite
-@onready var frame_menu: PopupMenu = %Frame
-@onready var view_menu: PopupMenu = %View
+@onready var options_menu: PopupMenu = %Options
 
 @onready var tabs: TabBar = %Tabs
 
@@ -33,7 +29,6 @@ func _ready() -> void:
 	_connect_signals()
 
 	_create_home_tab()
-	_create_edit_menu_items()
 
 
 func _connect_signals() -> void:
@@ -63,36 +58,6 @@ func _create_home_tab() -> void:
 	var tab_id: int = tabs.tab_count - 1
 
 	tabs.move_tab(tab_id, 0)
-
-
-func _create_edit_menu_items() -> void:
-	edit_menu.add_item("Undo")
-	edit_menu.add_item("Redo")
-
-	edit_menu.add_separator()
-
-	edit_menu.add_item("Cut")
-	edit_menu.add_item("Copy")
-	edit_menu.add_item("Paste")
-	edit_menu.add_item("Delete")
-
-	edit_menu.add_separator()
-
-	var rotate_submenu := PopupMenu.new()
-
-	rotate_submenu.add_item("180°")
-	rotate_submenu.add_item("90° CW")
-	rotate_submenu.add_item("90° CCW")
-
-	edit_menu.add_child(rotate_submenu)
-	edit_menu.add_submenu_node_item("Rotate", rotate_submenu)
-
-	edit_menu.add_item("Flip Horizontal")
-	edit_menu.add_item("Flip Vertical")
-
-	edit_menu.add_separator()
-
-	edit_menu.add_item("Settings")
 
 
 func _on_tab_changed(tab: int) -> void:
