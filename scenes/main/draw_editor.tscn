@@ -22,6 +22,8 @@
 [ext_resource type="Texture2D" uid="uid://c82a1s8u4bhqj" path="res://resources/visual/icons/circle.tres" id="16_po05y"]
 [ext_resource type="Script" uid="uid://bwntk4mvvpukq" path="res://scenes/main/canvas_view.gd" id="17_3k5hd"]
 [ext_resource type="Texture2D" uid="uid://cv5q32idwprww" path="res://resources/visual/icons/center_canvas.tres" id="22_5suks"]
+[ext_resource type="Texture2D" uid="uid://k2tyal05wi8g" path="res://resources/visual/icons/pen_off.tres" id="22_pu0yu"]
+[ext_resource type="Texture2D" uid="uid://dxww2yfyaukbs" path="res://resources/visual/icons/pen_on.tres" id="23_1rasu"]
 
 [node name="DrawEditor" type="HSplitContainer" unique_id=76540871]
 anchors_preset = 15
@@ -134,7 +136,6 @@ icon = ExtResource("3_anbg2")
 unique_name_in_owner = true
 layout_mode = 2
 toggle_mode = true
-action_mode = 0
 icon = ExtResource("8_daxrj")
 
 [node name="MirrorOptions" type="HBoxContainer" parent="CanvasPanel/CanvasVBox/ToolsHBox" unique_id=765071271]
@@ -273,6 +274,14 @@ value = 1.0
 layout_mode = 2
 size_flags_vertical = 3
 
+[node name="PenMode" type="TextureButton" parent="CanvasPanel/CanvasVBox/CanvasPanel/CanvasMargin/OptionsVBox" unique_id=471636182]
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("22_pu0yu")
+texture_pressed = ExtResource("23_1rasu")
+texture_hover = ExtResource("23_1rasu")
+stretch_mode = 5
+
 [node name="CenterCanvas" type="TextureButton" parent="CanvasPanel/CanvasVBox/CanvasPanel/CanvasMargin/OptionsVBox" unique_id=1326557480]
 modulate = Color(0.2509804, 0.28627452, 0.4509804, 1)
 layout_mode = 2
@@ -281,4 +290,5 @@ texture_pressed = ExtResource("22_5suks")
 texture_hover = ExtResource("22_5suks")
 
 [connection signal="gui_input" from="CanvasPanel/CanvasVBox/CanvasPanel" to="." method="_on_canvas_gui_input"]
+[connection signal="toggled" from="CanvasPanel/CanvasVBox/CanvasPanel/CanvasMargin/OptionsVBox/PenMode" to="." method="_on_pen_mode_toggled"]
 [connection signal="pressed" from="CanvasPanel/CanvasVBox/CanvasPanel/CanvasMargin/OptionsVBox/CenterCanvas" to="CanvasPanel/CanvasVBox/CanvasPanel/CanvasView" method="_on_center_canvas_pressed"]

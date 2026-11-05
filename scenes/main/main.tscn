@@ -119,5 +119,6 @@ access = 2
 filters = PackedStringArray("*.png")
 use_native_dialog = true
 
+[connection signal="tab_close_pressed" from="MainVBox/MenuHBox/Tabs" to="." method="_on_tabs_tab_close_pressed"]
 [connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]
 [connection signal="file_selected" from="SaveDialog" to="." method="_on_save_dialog_file_selected"]

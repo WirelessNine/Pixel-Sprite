@@ -66,6 +66,15 @@ func _ready() -> void:
 	_connect_signals()
 	_create_small_brush()
 
+	var picker: ColorPicker = color_picker.get_picker()
+	picker.edit_intensity = false
+	picker.color_mode = ColorPicker.MODE_HSV
+	picker.can_add_swatches = false
+	picker.sampler_visible = false
+	picker.color_modes_visible = false
+	picker.hex_visible = false
+	picker.presets_visible = false
+
 
 func _process(delta: float) -> void:
 	if not preview_active:
@@ -327,7 +336,7 @@ func _get_canvas_mouse_pos() -> Vector2i:
 
 
 func _on_canvas_gui_input(event: InputEvent) -> void:
-	if event.device < 1:
+	if event.device < 1 and AppManager.pen_only:
 		return
 
 	if brush_texture == null:
@@ -361,3 +370,7 @@ func _on_canvas_gui_input(event: InputEvent) -> void:
 			event_hover_motion(color, point)
 	else:
 		is_hovering = false
+
+
+func _on_pen_mode_toggled(toggled_on: bool) -> void:
+	AppManager.pen_only = toggled_on

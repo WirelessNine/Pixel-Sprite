@@ -2,6 +2,7 @@ extends Node
 
 signal file_created(file: FileInstance)
 signal palette_selected(new_palette: Texture2D)
+signal file_saved(file: FileInstance)
 
 signal create_file_requested
 signal open_file_requested
@@ -13,6 +14,8 @@ var files: Array[FileInstance]
 var current_file_number: int = 0
 
 var current_file: FileInstance
+
+var pen_only: bool = false
 
 
 func _ready() -> void:

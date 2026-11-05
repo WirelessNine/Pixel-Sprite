@@ -10,19 +10,7 @@
 		{
 			"uuid": "84cd57f6-12c5-480c-a0f1-1cb678652023",
 			"title": "Todo",
-			"tasks": [
-				"cec0255e-3735-4a07-9a86-547084b1102d",
-				"a683bdd3-61d0-4843-80a4-61fc589e549d",
-				"20e4a1e8-e7f9-4387-a5ac-8885c94bafab",
-				"9628b620-a810-4595-a33c-0c62114a73c2",
-				"ed72594b-ac7c-4201-8b80-cf3d284923c5",
-				"e4569c0a-f52b-4b71-827e-45f005f2bd17",
-				"151a46e4-00ef-4de2-b49b-c01f86d73800",
-				"fb1b1ff2-71a3-4a83-b436-3318614cce8f",
-				"e67e8f18-6e45-4269-8910-58ed82bd4f45",
-				"5818b333-fc3c-4489-8c2f-63d95bf29217",
-				"60157e85-4790-4021-8fc5-781328b574ba"
-			]
+			"tasks": []
 		},
 		{
 			"uuid": "6a328d40-a73b-4e3a-abe8-337d304881c0",
@@ -33,6 +21,7 @@
 			"uuid": "5aa41546-6933-4bc8-9e92-6dc0b3a92598",
 			"title": "Done",
 			"tasks": [
+				"60157e85-4790-4021-8fc5-781328b574ba",
 				"a2dff28e-1ea0-4218-8b94-02010f5612c1",
 				"c42bcfba-8189-43c8-8ae8-4bee5fa48447",
 				"432a12bf-46d1-4448-88a5-4d552b963df6",
@@ -84,27 +73,6 @@
 			"steps": []
 		},
 		{
-			"uuid": "cec0255e-3735-4a07-9a86-547084b1102d",
-			"title": "Add recent files list",
-			"description": "",
-			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
-			"steps": []
-		},
-		{
-			"uuid": "a683bdd3-61d0-4843-80a4-61fc589e549d",
-			"title": "Add image file saving and loading",
-			"description": "",
-			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
-			"steps": []
-		},
-		{
-			"uuid": "20e4a1e8-e7f9-4387-a5ac-8885c94bafab",
-			"title": "Add animation timeline",
-			"description": "",
-			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
-			"steps": []
-		},
-		{
 			"uuid": "57f4bf09-7393-47a5-b1cd-0bba7e5085c4",
 			"title": "Add draw canvas",
 			"description": "",
@@ -126,22 +94,8 @@
 			"steps": []
 		},
 		{
-			"uuid": "9628b620-a810-4595-a33c-0c62114a73c2",
-			"title": "Add layers",
-			"description": "",
-			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
-			"steps": []
-		},
-		{
 			"uuid": "a436ca15-6f7e-488d-aa63-30e08d301515",
 			"title": "Add drawing preview",
-			"description": "",
-			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
-			"steps": []
-		},
-		{
-			"uuid": "ed72594b-ac7c-4201-8b80-cf3d284923c5",
-			"title": "Add select tool",
 			"description": "",
 			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
 			"steps": []
@@ -154,22 +108,8 @@
 			"steps": []
 		},
 		{
-			"uuid": "e4569c0a-f52b-4b71-827e-45f005f2bd17",
-			"title": "Add fill tool",
-			"description": "",
-			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
-			"steps": []
-		},
-		{
 			"uuid": "6d74fe26-2f62-4fcd-aacd-19c847c4b642",
 			"title": "Add line tool",
-			"description": "",
-			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
-			"steps": []
-		},
-		{
-			"uuid": "151a46e4-00ef-4de2-b49b-c01f86d73800",
-			"title": "Add shape tool",
 			"description": "",
 			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
 			"steps": []
@@ -231,13 +171,6 @@
 			"steps": []
 		},
 		{
-			"uuid": "fb1b1ff2-71a3-4a83-b436-3318614cce8f",
-			"title": "Fix eraser always being square",
-			"description": "",
-			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
-			"steps": []
-		},
-		{
 			"uuid": "1df20979-ef5f-40ba-88f4-872ab3fa7203",
 			"title": "Change brush size with slider",
 			"description": "",
@@ -273,22 +206,8 @@
 			"steps": []
 		},
 		{
-			"uuid": "e67e8f18-6e45-4269-8910-58ed82bd4f45",
-			"title": "Add better color picker menu",
-			"description": "",
-			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
-			"steps": []
-		},
-		{
 			"uuid": "485ac8b4-07f1-48fb-acd0-acd8e30f69a5",
 			"title": "Add rectangle and circle tool",
-			"description": "",
-			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
-			"steps": []
-		},
-		{
-			"uuid": "5818b333-fc3c-4489-8c2f-63d95bf29217",
-			"title": "Add undo redo",
 			"description": "",
 			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
 			"steps": []

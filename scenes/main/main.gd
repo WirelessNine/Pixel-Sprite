@@ -86,6 +86,9 @@ func _on_file_created(file: FileInstance) -> void:
 func _on_save_requested() -> void:
 	var file: FileInstance = AppManager.current_file
 
+	if file == null:
+		return
+
 	if file.file_path:
 		file.get_as_image().save_png(file.file_path)
 	else:
@@ -117,3 +120,17 @@ func _on_save_dialog_file_selected(path: String) -> void:
 
 		if meta == file:
 			tabs.set_tab_title(x, meta.title)
+			return
+
+
+func _on_tabs_tab_close_pressed(tab: int) -> void:
+	var file: FileInstance = AppManager.current_file
+
+	if file == null:
+		return
+
+	if file.file_path:
+		file.get_as_image().save_png(file.file_path)
+		tabs.remove_tab(tab)
+	else:
+		save_dialog.popup_centered()
