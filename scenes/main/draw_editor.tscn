@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://b76wti6pcmn0g" path="res://resources/visual/icons/line.tres" id="5_03ugf"]
 [ext_resource type="Texture2D" uid="uid://dgnppp1b1s1g8" path="res://resources/visual/icons/rectangle.tres" id="6_oefrb"]
 [ext_resource type="Texture2D" uid="uid://cku7mrs5qp0hc" path="res://resources/visual/icons/select.tres" id="7_agl5e"]
+[ext_resource type="Texture2D" uid="uid://b1iawhd84g2vq" path="res://resources/visual/icons/filled.tres" id="8_daxrj"]
 [ext_resource type="PackedScene" uid="uid://cks5ukck18gdp" path="res://scenes/containers/draw_canvas.tscn" id="16_bwlaj"]
 [ext_resource type="Texture2D" uid="uid://c82a1s8u4bhqj" path="res://resources/visual/icons/circle.tres" id="16_po05y"]
 [ext_resource type="Script" uid="uid://bwntk4mvvpukq" path="res://scenes/main/canvas_view.gd" id="17_3k5hd"]
@@ -128,6 +129,13 @@ layout_mode = 2
 toggle_mode = true
 action_mode = 0
 icon = ExtResource("3_anbg2")
+
+[node name="Filled" type="Button" parent="CanvasPanel/CanvasVBox/ToolsHBox" unique_id=624643017]
+unique_name_in_owner = true
+layout_mode = 2
+toggle_mode = true
+action_mode = 0
+icon = ExtResource("8_daxrj")
 
 [node name="MirrorOptions" type="HBoxContainer" parent="CanvasPanel/CanvasVBox/ToolsHBox" unique_id=765071271]
 unique_name_in_owner = true

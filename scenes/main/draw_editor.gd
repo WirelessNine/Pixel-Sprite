@@ -45,6 +45,7 @@ var preview_elapsed: float = 0.0
 
 @onready var pixel_perfect_button: Button = %PixelPerfect
 @onready var continuous_button: Button = %Continuous
+@onready var filled_button: Button = %Filled
 
 @onready var mirror_options_box: HBoxContainer = %MirrorOptions
 @onready var mirror_h_button: Button = %MirrorH
@@ -137,6 +138,7 @@ func update_tool_options() -> void:
 	brush_size_slider.hide()
 	pixel_perfect_button.hide()
 	continuous_button.hide()
+	filled_button.hide()
 	mirror_options_box.hide()
 
 	match tool:
@@ -152,6 +154,10 @@ func update_tool_options() -> void:
 			brush_type_option.show()
 			brush_size_slider.show()
 			mirror_options_box.show()
+
+			if not tool == Tool.LINE:
+				filled_button.show()
+
 		Tool.SELECT:
 			mirror_options_box.show()
 
@@ -213,6 +219,10 @@ func event_pressed(color: Color, point: Vector2i) -> void:
 			match tool:
 				Tool.LINE:
 					draw_canvas.preview_line(brush_texture, color, point, point)
+				Tool.RECTANGLE:
+					draw_canvas.preview_rectangle(brush_texture, color, point, point)
+				Tool.CIRCLE:
+					draw_canvas.preview_circle(brush_texture, color, point, point)
 
 
 func event_released(color: Color, point: Vector2i) -> void:
@@ -226,6 +236,25 @@ func event_released(color: Color, point: Vector2i) -> void:
 				color,
 				shape_point_start,
 				point,
+			)
+		Tool.RECTANGLE:
+			draw_canvas.paint_rectangle(
+				brush_texture,
+				file.current_layer.texture,
+				color,
+				shape_point_start,
+				point,
+				filled_button.button_pressed,
+			)
+
+		Tool.CIRCLE:
+			draw_canvas.paint_circle(
+				brush_texture,
+				file.current_layer.texture,
+				color,
+				shape_point_start,
+				point,
+				filled_button.button_pressed,
 			)
 
 
@@ -250,9 +279,6 @@ func event_hover_motion(color: Color, point: Vector2i) -> void:
 				point,
 			)
 
-		Tool.LINE:
-			draw_canvas.preview_line(brush_texture, color, shape_point_start, point)
-
 
 func event_pressed_motion(color: Color, point: Vector2i) -> void:
 	match tool:
@@ -269,6 +295,12 @@ func event_pressed_motion(color: Color, point: Vector2i) -> void:
 
 		Tool.LINE:
 			draw_canvas.preview_line(brush_texture, color, shape_point_start, point)
+
+		Tool.RECTANGLE:
+			draw_canvas.preview_rectangle(brush_texture, color, shape_point_start, point)
+
+		Tool.CIRCLE:
+			draw_canvas.preview_circle(brush_texture, color, shape_point_start, point)
 
 
 func _connect_signals() -> void:

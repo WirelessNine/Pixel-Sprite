@@ -19,7 +19,6 @@
 				"ed72594b-ac7c-4201-8b80-cf3d284923c5",
 				"e4569c0a-f52b-4b71-827e-45f005f2bd17",
 				"151a46e4-00ef-4de2-b49b-c01f86d73800",
-				"a5ac7441-b2e0-4430-ac02-a1640cdc1db8",
 				"fb1b1ff2-71a3-4a83-b436-3318614cce8f",
 				"d946d18a-509e-4428-8bbe-6a42188d29be",
 				"e67e8f18-6e45-4269-8910-58ed82bd4f45"
@@ -34,6 +33,7 @@
 			"uuid": "5aa41546-6933-4bc8-9e92-6dc0b3a92598",
 			"title": "Done",
 			"tasks": [
+				"485ac8b4-07f1-48fb-acd0-acd8e30f69a5",
 				"6d74fe26-2f62-4fcd-aacd-19c847c4b642",
 				"b85560bd-518f-4a1c-836c-516d4c3ae090",
 				"7c80c24b-4d4a-4027-b94b-d4615ba057ac",
@@ -171,13 +171,6 @@
 			"steps": []
 		},
 		{
-			"uuid": "a5ac7441-b2e0-4430-ac02-a1640cdc1db8",
-			"title": "Add support .ase files",
-			"description": "",
-			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
-			"steps": []
-		},
-		{
 			"uuid": "a9918989-8c23-4e3c-a650-1bf14da7934b",
 			"title": "Add UI theme",
 			"description": "",
@@ -278,6 +271,13 @@
 		{
 			"uuid": "e67e8f18-6e45-4269-8910-58ed82bd4f45",
 			"title": "Add better color picker menu",
+			"description": "",
+			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
+			"steps": []
+		},
+		{
+			"uuid": "485ac8b4-07f1-48fb-acd0-acd8e30f69a5",
+			"title": "Add rectangle and circle tool",
 			"description": "",
 			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
 			"steps": []
