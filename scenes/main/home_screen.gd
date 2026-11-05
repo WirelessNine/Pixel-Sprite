@@ -6,4 +6,4 @@ func _on_create_file_pressed() -> void:
 
 
 func _on_open_file_pressed() -> void:
-	Events.open_file_requested.emit()
+	AppManager.open_file_requested.emit()

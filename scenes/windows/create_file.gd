@@ -4,6 +4,10 @@ extends Menu
 @onready var height_edit: SpinBox = %Height
 
 
+func _ready() -> void:
+	AppManager.create_file_requested.connect(open)
+
+
 func _on_create_pressed() -> void:
 	var x_value: int = roundi(width_edit.value)
 	var y_value: int = roundi(height_edit.value)

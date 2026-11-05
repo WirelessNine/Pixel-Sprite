@@ -24,7 +24,7 @@ func _ready() -> void:
 
 
 func _on_list_item_selected(index: int) -> void:
-	Events.palette_selected.emit(list.get_item_metadata(index))
+	AppManager.palette_selected.emit(list.get_item_metadata(index))
 	close()
 
 

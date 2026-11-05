@@ -1,9 +1,11 @@
 class_name FileInstance
-extends RefCounted
+extends Resource
 
-var file_path: String = ""
+@export var file_path: String = ""
+@export var canvas_size: Vector2i
+@export var layers: Array[Layer]
+
 var title: String
-var canvas_size: Vector2i
 
 var palette: ColorPalette
 
@@ -14,7 +16,6 @@ var mirror_v_enabled: bool = false
 var mirror_v_pos: int
 
 var current_layer: Layer
-var layers: Array[Layer]
 
 
 func setup_file() -> void:
@@ -46,6 +47,22 @@ func set_current_layer(layer: Layer) -> void:
 	current_layer = layer
 
 
+func get_as_image() -> Image:
+	var image := Image.create_empty(canvas_size.x, canvas_size.y, false, Image.FORMAT_ETC2_RGBA8)
+
+	if image.is_compressed():
+		image.decompress()
+
+	image.fill(Color(1.0, 1.0, 1.0, 0.0))
+
+	for x: Layer in layers:
+		var layer_image: Image = x.texture.get_image()
+
+		image.blend_rect(layer_image, Rect2i(Vector2i.ZERO, canvas_size), Vector2i.ZERO)
+
+	return image
+
+
 func _create_layer(name: String, texture: DrawableTexture2D) -> Layer:
 	var layer := Layer.new()
 	layer.name = name
@@ -54,8 +71,3 @@ func _create_layer(name: String, texture: DrawableTexture2D) -> Layer:
 	layers.append(layer)
 
 	return layer
-
-
-class Layer:
-	var name: String
-	var texture: DrawableTexture2D

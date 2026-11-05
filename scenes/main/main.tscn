@@ -127,7 +127,17 @@ position = Vector2i(0, 36)
 file_mode = 0
 display_mode = 1
 access = 2
-filters = PackedStringArray("*.png", "*.jpg", "*.jpeg")
+filters = PackedStringArray("*.png", "*.jpg", "*.jpeg", "*.tres", "*.res")
+use_native_dialog = true
+
+[node name="SaveDialog" type="FileDialog" parent="." unique_id=1114636562]
+unique_name_in_owner = true
+oversampling_override = 1.0
+position = Vector2i(0, 36)
+display_mode = 1
+access = 2
+filters = PackedStringArray("*.png")
 use_native_dialog = true
 
 [connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]
+[connection signal="file_selected" from="SaveDialog" to="." method="_on_save_dialog_file_selected"]

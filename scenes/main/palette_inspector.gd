@@ -28,7 +28,7 @@ func _ready() -> void:
 
 	color_picker.color_changed.connect(_on_color_picker_changed)
 	palettes_button.pressed.connect(MenuManager.open_menu.bind("palette_menu"))
-	Events.palette_selected.connect(load_palette)
+	AppManager.palette_selected.connect(load_palette)
 
 
 func load_palette(palette: Texture2D) -> void:

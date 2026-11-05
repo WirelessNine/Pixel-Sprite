@@ -19,6 +19,7 @@ const UNNAMED_TITLE: String = "Unnamed %01d"
 @onready var background_rect: ColorRect = $Dialogs/Background
 
 @onready var file_dialog: FileDialog = %FileDialog
+@onready var save_dialog: FileDialog = %SaveDialog
 
 var current_file_number: int = 0
 
@@ -38,8 +39,9 @@ func _ready() -> void:
 func _connect_signals() -> void:
 	tabs.tab_changed.connect(_on_tab_changed)
 
-	Events.file_created.connect(_on_file_created)
-	Events.open_file_requested.connect(file_dialog.popup_centered)
+	AppManager.file_created.connect(_on_file_created)
+	AppManager.open_file_requested.connect(file_dialog.popup_centered)
+	AppManager.save_file_requested.connect(_on_save_requested)
 
 
 func _show_home_screen() -> void:
@@ -98,9 +100,13 @@ func _on_tab_changed(tab: int) -> void:
 
 	if title == HOME_TITLE:
 		_show_home_screen()
+		AppManager.current_file = null
 	else:
 		_show_draw_editor()
-		draw_editor.update_editor(tabs.get_tab_metadata(tab))
+		var meta: Variant = tabs.get_tab_metadata(tab)
+
+		draw_editor.update_editor(meta)
+		AppManager.current_file = meta
 
 
 func _on_file_created(file: FileInstance) -> void:
@@ -112,6 +118,15 @@ func _on_file_created(file: FileInstance) -> void:
 	tabs.current_tab = id
 
 
+func _on_save_requested() -> void:
+	var file: FileInstance = AppManager.current_file
+
+	if file.file_path:
+		file.get_as_image().save_png(file.file_path)
+	else:
+		save_dialog.popup_centered()
+
+
 func _on_file_dialog_file_selected(path: String) -> void:
 	var image := Image.load_from_file(path)
 
@@ -121,3 +136,19 @@ func _on_file_dialog_file_selected(path: String) -> void:
 	var texture := ImageTexture.create_from_image(image)
 
 	AppManager.load_image(texture, path)
+
+
+func _on_save_dialog_file_selected(path: String) -> void:
+	if AppManager.current_file == null:
+		return
+
+	var file: FileInstance = AppManager.current_file
+	file.get_as_image().save_png(path)
+	file.file_path = path
+	file.title = path.get_file().get_basename()
+
+	for x: int in tabs.tab_count:
+		var meta: Variant = tabs.get_tab_metadata(x)
+
+		if meta == file:
+			tabs.set_tab_title(x, meta.title)

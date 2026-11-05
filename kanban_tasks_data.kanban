@@ -20,7 +20,8 @@
 				"151a46e4-00ef-4de2-b49b-c01f86d73800",
 				"fb1b1ff2-71a3-4a83-b436-3318614cce8f",
 				"e67e8f18-6e45-4269-8910-58ed82bd4f45",
-				"5818b333-fc3c-4489-8c2f-63d95bf29217"
+				"5818b333-fc3c-4489-8c2f-63d95bf29217",
+				"60157e85-4790-4021-8fc5-781328b574ba"
 			]
 		},
 		{
@@ -32,6 +33,7 @@
 			"uuid": "5aa41546-6933-4bc8-9e92-6dc0b3a92598",
 			"title": "Done",
 			"tasks": [
+				"c42bcfba-8189-43c8-8ae8-4bee5fa48447",
 				"432a12bf-46d1-4448-88a5-4d552b963df6",
 				"d946d18a-509e-4428-8bbe-6a42188d29be",
 				"485ac8b4-07f1-48fb-acd0-acd8e30f69a5",
@@ -286,6 +288,20 @@
 		{
 			"uuid": "5818b333-fc3c-4489-8c2f-63d95bf29217",
 			"title": "Add undo redo",
+			"description": "",
+			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
+			"steps": []
+		},
+		{
+			"uuid": "c42bcfba-8189-43c8-8ae8-4bee5fa48447",
+			"title": "Add png saving",
+			"description": "",
+			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
+			"steps": []
+		},
+		{
+			"uuid": "60157e85-4790-4021-8fc5-781328b574ba",
+			"title": "Add stylus mode button",
 			"description": "",
 			"category": "54b9d8a8-d5ae-40d0-bb45-885bce68a118",
 			"steps": []

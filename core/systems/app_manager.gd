@@ -1,9 +1,18 @@
 extends Node
 
+signal file_created(file: FileInstance)
+signal palette_selected(new_palette: Texture2D)
+
+signal create_file_requested
+signal open_file_requested
+signal save_file_requested
+
 const UNNAMED_TITLE: String = "Unnamed %01d"
 
 var files: Array[FileInstance]
 var current_file_number: int = 0
+
+var current_file: FileInstance
 
 
 func _ready() -> void:
@@ -22,7 +31,7 @@ func create_file(canvas_size: Vector2i) -> void:
 
 	files.append(file)
 
-	Events.file_created.emit(file)
+	AppManager.file_created.emit(file)
 
 
 func load_image(texture: Texture2D, path: String) -> void:
@@ -39,7 +48,7 @@ func load_image(texture: Texture2D, path: String) -> void:
 
 	files.append(file)
 
-	Events.file_created.emit(file)
+	AppManager.file_created.emit(file)
 
 
 func _handle_scale() -> void:

@@ -248,7 +248,7 @@ func refresh_layers(file: FileInstance) -> void:
 
 	var selected_layer: TextureRect
 
-	for x: FileInstance.Layer in file.layers:
+	for x: Layer in file.layers:
 		var rect: TextureRect = _create_layer(x.texture)
 		rect.name = x.name
 
