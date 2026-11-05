@@ -86,3 +86,8 @@ func _zoom_at(pos: Vector2, factor: float) -> void:
 	pan = pos - local * zoom
 
 	_update_texture()
+
+
+func _on_center_canvas_pressed() -> void:
+	_reset_canvas()
+	_update_texture()
