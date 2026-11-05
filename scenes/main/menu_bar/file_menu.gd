@@ -22,3 +22,5 @@ func _on_id_pressed(id: int) -> void:
 	match id:
 		0:
 			MenuManager.open_menu("create_file")
+		1:
+			Events.open_file_requested.emit()

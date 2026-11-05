@@ -25,6 +25,23 @@ func create_file(canvas_size: Vector2i) -> void:
 	Events.file_created.emit(file)
 
 
+func load_image(texture: Texture2D, path: String) -> void:
+	var file := FileInstance.new()
+
+	file.title = path.get_file().get_basename()
+	file.canvas_size = texture.get_size()
+	file.file_path = path
+
+	file.setup_file()
+
+	var rect := Rect2i(Vector2i.ZERO, file.canvas_size)
+	file.current_layer.texture.blit_rect(rect, texture)
+
+	files.append(file)
+
+	Events.file_created.emit(file)
+
+
 func _handle_scale() -> void:
 	var window_size_y: int = get_window().size.y
 

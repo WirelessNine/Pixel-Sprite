@@ -237,6 +237,7 @@ func refresh_layers(file: FileInstance) -> void:
 		x.queue_free()
 
 	custom_minimum_size = file.canvas_size
+	custom_maximum_size = file.canvas_size
 
 	preview_texture.setup(
 		file.canvas_size.x,

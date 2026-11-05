@@ -118,3 +118,16 @@ offset_right = 25.0
 offset_bottom = 26.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="FileDialog" type="FileDialog" parent="." unique_id=961116833]
+unique_name_in_owner = true
+oversampling_override = 1.0
+title = "Open a File"
+position = Vector2i(0, 36)
+file_mode = 0
+display_mode = 1
+access = 2
+filters = PackedStringArray("*.png", "*.jpg", "*.jpeg")
+use_native_dialog = true
+
+[connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]

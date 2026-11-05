@@ -18,6 +18,8 @@ const UNNAMED_TITLE: String = "Unnamed %01d"
 
 @onready var background_rect: ColorRect = $Dialogs/Background
 
+@onready var file_dialog: FileDialog = %FileDialog
+
 var current_file_number: int = 0
 
 
@@ -37,6 +39,7 @@ func _connect_signals() -> void:
 	tabs.tab_changed.connect(_on_tab_changed)
 
 	Events.file_created.connect(_on_file_created)
+	Events.open_file_requested.connect(file_dialog.popup_centered)
 
 
 func _show_home_screen() -> void:
@@ -107,3 +110,14 @@ func _on_file_created(file: FileInstance) -> void:
 
 	tabs.set_tab_metadata(id, file)
 	tabs.current_tab = id
+
+
+func _on_file_dialog_file_selected(path: String) -> void:
+	var image := Image.load_from_file(path)
+
+	if not image:
+		return
+
+	var texture := ImageTexture.create_from_image(image)
+
+	AppManager.load_image(texture, path)

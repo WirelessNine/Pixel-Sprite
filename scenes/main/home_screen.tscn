@@ -37,11 +37,11 @@ text = "Pixel
 Sprite"
 label_settings = SubResource("LabelSettings_r4c7q")
 
-[node name="Button" type="Button" parent="HomeScreen/TitleHBox" unique_id=1751987593]
+[node name="CreateFile" type="Button" parent="HomeScreen/TitleHBox" unique_id=1751987593]
 layout_mode = 2
 text = "Create File"
 
-[node name="Button2" type="Button" parent="HomeScreen/TitleHBox" unique_id=615236966]
+[node name="OpenFile" type="Button" parent="HomeScreen/TitleHBox" unique_id=615236966]
 layout_mode = 2
 text = "Open File"
 
@@ -64,4 +64,5 @@ vertical_alignment = 2
 layout_mode = 2
 size_flags_vertical = 3
 
-[connection signal="pressed" from="HomeScreen/TitleHBox/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="HomeScreen/TitleHBox/CreateFile" to="." method="_on_create_file_pressed"]
+[connection signal="pressed" from="HomeScreen/TitleHBox/OpenFile" to="." method="_on_open_file_pressed"]
