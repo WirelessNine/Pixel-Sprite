@@ -16,7 +16,9 @@
 
 >While this software works on desktop, it's not as good as using a program made for desktop!
 
-&nbsp;&nbsp;&nbsp; Using it is not that hard. You create a new file by pressing the "New File" button in home or going to File->New. Choose a canvas resolution and create it! Use the pen tool to draw and the eraser tool to erase. Use the color picker button to choose a color and the brush type and size to change the brush, and that's all there is. Before you start drawing masterpieces, remember that you can't save your work right now!
+>To draw with your finger on mobile, make sure the stylus mode (the button in the left bottom that looks like the pencil) is toggled off. I still recommend drawing with a stylus because using fingers is clunky.
+
+&nbsp;&nbsp;&nbsp; Using it is not that hard. You create a new file by pressing the "New File" button in home or going to File->New. Choose a canvas resolution and create it! Use the pencil tool to draw, the eraser tool to erase and the line, rectangle and circle to draw euclidean geometry. Use the color picker button to choose a color and the brush type and size to change the brush. Sadly, many features I planned were not added because of I was very burnt out, maybe I will revisit this app in the future.
 
 <p align="center">
   <img src="assets/screenshots/ss3.png" width="500">
