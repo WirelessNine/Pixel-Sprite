@@ -14,6 +14,14 @@
   <img src="assets/screenshots/ss2.png" width="500">
 </p>
 
+
+## How to download
+
+&nbsp;&nbsp;&nbsp; Go to releases and download the exe if using desktop, or apk if using mobile. You will get warnings because of unknown developer, you can skip it. After than just run the app, it should work perfectly.
+
+
+## How to use
+
 >While this software works on desktop, it's not as good as using a program made for desktop!
 
 >To draw with your finger on mobile, make sure the stylus mode (the button in the left bottom that looks like the pencil) is toggled off. I still recommend drawing with a stylus because using fingers is clunky.
